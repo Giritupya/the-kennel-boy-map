@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Kennel Boy — Map</title>
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+    defer
+  ></script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="map.js" defer></script>
+</head>
+
+<body class="map-body">
+  <header class="wrap header">
+    <div>
+      <h1>Interactive Map</h1>
+      <p class="sub">Click markers to view details.</p>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="map.html" class="active">Map</a>
+    </nav>
+  </header>
+
+  <main class="map-wrap">
+    <aside class="panel" id="infoPanel">
+      <h2 id="panelTitle">Welcome</h2>
+      <p id="panelText">
+        Click a marker on the map to see details here.
+      </p>
+
+      <hr />
+
+      <label class="label" for="search">Search</label>
+      <input id="search" class="input" placeholder="Type a location name…" />
+
+      <div id="searchResults" class="results"></div>
+
+      <hr />
+
+      <label class="label">Filters</label>
+      <div class="chips">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="keep">Keep</button>
+        <button class="chip" data-filter="town">Town</button>
+        <button class="chip" data-filter="ruin">Ruin</button>
+      </div>
+    </aside>
+
+    <section class="map-area">
+      <div id="map"></div>
+    </section>
+  </main>
+</body>
+</html>
