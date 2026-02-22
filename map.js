@@ -210,7 +210,7 @@ function startVelisTransition(){
   } catch (_) {}
 
   // Abyss image (briefly visible behind the falling plane)
-  if (abyss) abyss.style.backgroundImage = `url('assets/velis/abyss.webp')`;
+  if (abyss) abyss.style.backgroundImage = `url('./assets/velis/abyss.webp')`;
 
   // Side tethers: still use the frozen background (NOT the front, which is now the DOM clone)
   const frozen = freezeMapViewForTransition();
