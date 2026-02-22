@@ -90,7 +90,7 @@ image: "assets/locations/Ollwens-Cottage.webp"
 image: "assets/locations/Estmere.webp"
   },
 {
-    id: "The Fallen Archive (The Scriptorium of Velis)",
+    id: "fallenarchive",
     name: "The Scriptorium of Velis",
     type: "Library",
     grid: [45, 27], // placeholder
@@ -146,6 +146,107 @@ function setPanel(title, text, image) {
 }
 }
 
+
+/* =========================
+   Velis transition helpers
+   ========================= */
+
+function freezeMapViewForTransition() {
+  if (!map) return null;
+
+  const imgW = 4096;
+  const imgH = 4096;
+
+  const zoom = map.getZoom();
+  const scale = map.getZoomScale(zoom, 0); // 1 at zoom 0 in CRS.Simple
+  const pxBounds = map.getPixelBounds();   // pixel bounds at current zoom
+
+  return {
+    imgW, imgH, scale,
+    bgSize: `${imgW * scale}px ${imgH * scale}px`,
+    bgPos: `${-pxBounds.min.x}px ${-pxBounds.min.y}px`,
+  };
+}
+
+function startVelisTransition(){
+  console.log("startVelisTransition fired ✅");
+
+  const overlay = document.getElementById("velisTransition");
+  const abyss = document.getElementById("velisAbyss");
+  const front = document.getElementById("velisFront");
+  const left  = document.getElementById("velisLeft");
+  const right = document.getElementById("velisRight");
+
+  if (!overlay || !front) return;
+
+  // Hide the real map while transition runs
+  document.body.classList.add("velis-running");
+
+  // Freeze EXACT view (map + markers + panel) by cloning the DOM the user sees
+  const liveWrap = document.querySelector(".map-wrap");
+  if (liveWrap) {
+    const clone = liveWrap.cloneNode(true);
+    clone.id = "velisFrozen";
+    clone.style.pointerEvents = "none";
+    clone.style.width = "100%";
+    clone.style.height = "100%";
+
+    // Put the clone into the falling face
+    front.innerHTML = "";
+    front.appendChild(clone);
+
+    // Make sure the face isn't using a background image anymore
+    front.style.backgroundImage = "none";
+  }
+
+  // Disable map interaction while we run the sequence
+  try {
+    map.dragging.disable();
+    map.scrollWheelZoom.disable();
+    map.doubleClickZoom.disable();
+    map.boxZoom.disable();
+    map.keyboard.disable();
+    map.touchZoom.disable();
+  } catch (_) {}
+
+  // Abyss image (briefly visible behind the falling plane)
+  if (abyss) abyss.style.backgroundImage = `url('assets/velis/abyss.png')`;
+
+  // Side tethers: still use the frozen background (NOT the front, which is now the DOM clone)
+  const frozen = freezeMapViewForTransition();
+  const paintStrip = (el) => {
+    if (!el) return;
+    if (frozen) {
+      el.style.backgroundImage = `url('${MAP_IMAGE}')`;
+      el.style.backgroundSize = frozen.bgSize;
+      el.style.backgroundPosition = frozen.bgPos;
+      el.style.backgroundRepeat = "no-repeat";
+    } else {
+      el.style.backgroundImage = `url('${MAP_IMAGE}')`;
+      el.style.backgroundSize = "cover";
+      el.style.backgroundPosition = "center";
+    }
+  };
+  paintStrip(left);
+  paintStrip(right);
+
+  // Kick off animations
+  overlay.classList.add("on");
+
+  requestAnimationFrame(() => {
+    overlay.classList.add("run");
+  });
+
+  // Open doors once
+  window.setTimeout(() => {
+    overlay.classList.add("open");
+  }, 5600);
+
+  // Navigate
+  window.setTimeout(() => {
+    window.location.href = "velis.html";
+  }, 7050);
+}
 window.addEventListener("DOMContentLoaded", async () => {
   // Load image to get dimensions
  
@@ -176,11 +277,16 @@ const imgH = 4096;
 
   const marker = L.marker(latlng).addTo(map);
 
-  marker.bindPopup(`<b>${loc.name}</b><br>${loc.description}`);
-
-  marker.on("click", () => {
-    setPanel(loc.name, loc.description, loc.image);
-  });
+  // Normal pins show the info panel + popup.
+  // Fallen Archive triggers the Velis transition instead.
+  if (loc.id === "fallenarchive") {
+    marker.on("click", () => startVelisTransition());
+  } else {
+    marker.bindPopup(`<b>${loc.name}</b><br>${loc.description}`);
+    marker.on("click", () => {
+      setPanel(loc.name, loc.description, loc.image);
+    });
+  }
 });
 
   // === CLICK-TO-GET-GRID TOOL (THIS IS THE NEW BIT) ===

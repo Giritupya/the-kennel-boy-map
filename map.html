@@ -19,8 +19,8 @@
     defer
   ></script>
 
-  <link rel="stylesheet" href="styles.css" />
-  <script src="map.js" defer></script>
+ <link rel="stylesheet" href="styles.css?v=velis100">
+<script src="map.js?v=velis100" defer></script>
 </head>
 
 <body class="map-body">
@@ -64,5 +64,30 @@
       <div id="map"></div>
     </section>
   </main>
+
+  <!-- Velis transition overlay (hidden until Fallen Archive is clicked) -->
+  <div id="velisTransition" aria-hidden="true">
+    <div class="velis-abyss" id="velisAbyss"></div>
+
+    <div class="velis-camera" id="velisCamera">
+      <div class="velis-frame">
+        <div class="velis-strip velis-left" id="velisLeft"></div>
+
+        <div class="velis-flip" id="velisFlip">
+          <div class="velis-face velis-front" id="velisFront"></div>
+
+          <div class="velis-face velis-back" id="velisBack">
+            <div class="velis-doors">
+              <div class="velis-door velis-door-left"></div>
+              <div class="velis-door velis-door-right"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="velis-strip velis-right" id="velisRight"></div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
