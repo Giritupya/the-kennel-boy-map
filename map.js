@@ -64,7 +64,7 @@ image: "assets/locations/Greymoss-Hollow.webp"
     type: "town",
     grid: [26, 28], // placeholder
     description: "A bowl of ruin shrouded in fog — ash underfoot, silence overhead, and the feeling that the village wasn’t merely destroyed… it was emptied. Blackened beams, swallowed stone walls, and a well at the centre like an open mouth.",
-image: "assets/locations/Greymoss-Ruin.webp"
+image: "assets/locations/Greymoss-ruin.webp"
   },
 {
     id: "Ollwen's Cottage",
