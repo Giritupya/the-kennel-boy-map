@@ -18,8 +18,40 @@ const locations = [
     description: "Setting: A stone keep raised upon a high shoulder of rock above the frostplain’s edge, its wind-scoured battlements watching land that never quite forgets what lies beneath. The kennels breathe below its walls, and its bells carry farther than they should.",
 image: "assets/locations/rimeholt.webp"
   },
+  {
+    id: "deepenwood",
+    name: "Deepenwood",
+    type: "nature",
+    grid: [28, 30], // placeholder - use click tool to get exact
+    description: "A dense stretch of old forest where the light thins and sound carries strangely between the trunks. The trees grow close and tall, their roots twisting through damp earth and forgotten paths. It is a place of uneasy quiet — not hostile, but watchful — where the world feels older than the roads that cut through it.",
+image: "assets/locations/rimeholt.webp"
+  },
+  {
+    id: "ollwens-cottage",
+    name: "Ollwen's Cottage",
+    type: "Cottage",
+    grid: [29, 28], // placeholder
+    description: "A modest woodland dwelling set along a quiet forest track, lamplight warm against deep timber and leaf-shadow. Within its walls, counsel is given and roads begin to shift.",
+image: "assets/locations/Ollwens-Cottage.webp"
+  },
+  {
+    id: "greymoss-hollow (New Village)",
+    name: "Greymoss Hollow",
+    type: "town",
+    grid: [28, 25], // placeholder
+    description: "Mist-heavy and close with damp, a place where firelight fights to feel welcoming. The tavern crackles and mutters, windows fogged like the world outside wants in — smoke, sour ale, wet wool, and the sense that everyone’s listening.",
+image: "assets/locations/Greymoss-Hollow.webp"
+  },
+  {
+    id: "misty-foothills",
+    name: "Misty Foothills",
+    type: "town",
+    grid: [27, 27], // placeholder
+    description: "Mist-heavy and close with damp, a place where firelight fights to feel welcoming. The tavern crackles and mutters, windows fogged like the world outside wants in — smoke, sour ale, wet wool, and the sense that everyone’s listening.",
+image: "assets/locations/Greymoss-Hollow.webp"
+  },
  {
-    id: "Greyharbour Rest",
+    id: "greyharbour-rest",
     name: "Greyharbour Rest",
     type: "town",
     grid: [35, 20], // placeholder
@@ -27,7 +59,7 @@ image: "assets/locations/rimeholt.webp"
 image: "assets/locations/Greyharbour-Rest.webp"
   },
 {
-    id: "Barrow Hill",
+    id: "barrow-hill",
     name: "Barrow Hill",
     type: "town",
     grid: [44, 20], // placeholder
@@ -35,7 +67,7 @@ image: "assets/locations/Greyharbour-Rest.webp"
 image: "assets/locations/Barrow-Hill.webp"
   },
 {
-    id: "Brooke Haven",
+    id: "brooke-haven",
     name: "Brooke Haven",
     type: "town",
     grid: [53, 21], // placeholder
@@ -43,37 +75,23 @@ image: "assets/locations/Barrow-Hill.webp"
 image: "assets/locations/Brooke-Haven.webp"
   },
 {
-    id: "Ash Hollow",
+    id: "ash-hollow",
     name: "Ash Hollow (Old Ruin / “nothing left but stone and stories”)",
     type: "town",
     grid: [31, 20], // placeholder
     description: "A name that still carries weight, even after the place itself is gone. They say it burned out years ago — and that when the wind turns, the ground remembers.",
 image: "assets/locations/Ash-Hollow.webp"
   },
+
 {
-    id: "Greymoss Hollow (New Village)",
-    name: "Greymoss Hollow",
-    type: "town",
-    grid: [28, 25], // placeholder
-    description: "Mist-heavy and close with damp, a place where firelight fights to feel welcoming. The tavern crackles and mutters, windows fogged like the world outside wants in — smoke, sour ale, wet wool, and the sense that everyone’s listening.",
-image: "assets/locations/Greymoss-Hollow.webp"
-  },
-{
-    id: "Greymoss Hollow (Old Ruins)",
+    id: "greymoss-hollow -ruins",
     name: "Greymoss Hollow",
     type: "town",
     grid: [26, 28], // placeholder
     description: "A bowl of ruin shrouded in fog — ash underfoot, silence overhead, and the feeling that the village wasn’t merely destroyed… it was emptied. Blackened beams, swallowed stone walls, and a well at the centre like an open mouth.",
-image: "assets/locations/Greymoss-ruin.webp"
+image: "assets/locations/Greymoss-Ruin.webp"
   },
-{
-    id: "Ollwen's Cottage",
-    name: "Ollwen's Cottage",
-    type: "Cottage",
-    grid: [29, 28], // placeholder
-    description: "A modest woodland dwelling set along a quiet forest track, lamplight warm against deep timber and leaf-shadow. Within its walls, counsel is given and roads begin to shift.",
-image: "assets/locations/Ollwens-Cottage.webp"
-  },
+
   {
     id: "blackmere",
     name: "Blackmere",
@@ -90,7 +108,7 @@ image: "assets/locations/Ollwens-Cottage.webp"
 image: "assets/locations/Estmere.webp"
   },
 {
-    id: "fallenarchive",
+    id: "fallen-archive",
     name: "The Scriptorium of Velis",
     type: "Library",
     grid: [45, 27], // placeholder
@@ -106,6 +124,60 @@ image: "assets/locations/The-Fallen-Archive.webp"
 image: "assets/locations/The-Capital.webp"
   }
 ];
+
+// === Chapter reveal list (minimal test) ===
+const chapterReveals = {
+  0: [],
+  1: ["rimeholt"],
+  2: ["rimeholt", "deepenwood"],
+  3: ["rimeholt", "deepenwood", "ollwens-cottage"],
+  4: ["rimeholt", "deepenwood", "ollwens-cottage"],
+  5: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow (New Village)", "misty-foothills"],
+  6: ["rimeholt", "ollwens-cottage", "greymoss-hollow (New Village)", "Ash Hollow", "Greyharbour Rest", "fallenarchive"],
+  7: [],
+  8: [],
+  9: [],
+  10: [],
+  11: [],
+  12: [],
+  13: [],
+  14: [],
+  15: [],
+  16: [],
+  17: [],
+  18: [],
+  19: [],
+  20: [],
+  21: [],
+  22: [],
+  23: [],
+  24: [],
+  25: [],
+  26: [],
+  27: [],
+  28: [],
+  29: []
+};
+
+function renderPinsForChapter(chapter, imgW, imgH, markerLayer) {
+  markerLayer.clearLayers();
+
+  const allowed = new Set(chapterReveals[chapter] || []);
+
+  locations.forEach((loc) => {
+    if (!allowed.has(loc.id)) return;
+
+    const latlng = gridToLatLng(loc.grid[0], loc.grid[1], imgW, imgH);
+    const marker = L.marker(latlng).addTo(markerLayer);
+
+    if (loc.id === "fallenarchive") {
+      marker.on("click", () => startVelisTransition());
+    } else {
+      marker.bindPopup(`<b>${loc.name}</b><br>${loc.description}`);
+      marker.on("click", () => setPanel(loc.name, loc.description, loc.image));
+    }
+  });
+}
 
 // Convert grid cell (col,row) to Leaflet image coords [y,x] centred in the cell
 function gridToLatLng(col, row, imgW, imgH) {
@@ -246,6 +318,32 @@ function startVelisTransition(){
   window.setTimeout(() => {
     window.location.href = "velis.html";
   }, 11000);
+// === Chapter reveal list (Step 1: minimal test) ===
+const chapterReveals = {
+  0: [],                  // start: no pins
+  1: ["rimeholt"]         // chapter 1: only Rimeholt
+};
+function renderPinsForChapter(chapter, imgW, imgH, markerLayer) {
+  markerLayer.clearLayers(); // remove existing pins
+
+  const allowedIds = new Set(chapterReveals[chapter] || []);
+
+  locations.forEach((loc) => {
+    if (!allowedIds.has(loc.id)) return; // hide pins not in this chapter
+
+    const latlng = gridToLatLng(loc.grid[0], loc.grid[1], imgW, imgH);
+    const marker = L.marker(latlng).addTo(markerLayer);
+
+    if (loc.id === "fallenarchive") {
+      marker.on("click", () => startVelisTransition());
+    } else {
+      marker.bindPopup(`<b>${loc.name}</b><br>${loc.description}`);
+      marker.on("click", () => {
+        setPanel(loc.name, loc.description, loc.image);
+      });
+    }
+  });
+}
 }
 window.addEventListener("DOMContentLoaded", async () => {
   // Load image to get dimensions
@@ -272,26 +370,29 @@ const imgH = 4096;
   map.setZoom(0);
 
   // Add markers from grid coordinates
-  locations.forEach((loc) => {
-  const latlng = gridToLatLng(loc.grid[0], loc.grid[1], imgW, imgH);
+   const markerLayer = L.layerGroup().addTo(map);
+   renderPinsForChapter(0, imgW, imgH, markerLayer);
+// markerLayer.clearLayers();S
+//   locations.forEach((loc) => {
+//   const latlng = gridToLatLng(loc.grid[0], loc.grid[1], imgW, imgH);
 
-  const marker = L.marker(latlng).addTo(map);
+//   const marker = L.marker(latlng).addTo(markerLayer);
 
-  // Normal pins show the info panel + popup.
-  // Fallen Archive triggers the Velis transition instead.
-  if (loc.id === "fallenarchive") {
-    marker.on("click", () => startVelisTransition());
-  } else {
-    marker.bindPopup(`<b>${loc.name}</b><br>${loc.description}`);
-    marker.on("click", () => {
-      setPanel(loc.name, loc.description, loc.image);
-    });
-  }
-});
+//   // Normal pins show the info panel + popup.
+//   // Fallen Archive triggers the Velis transition instead.
+//   if (loc.id === "fallenarchive") {
+//     marker.on("click", () => startVelisTransition());
+//   } else {
+//     marker.bindPopup(`<b>${loc.name}</b><br>${loc.description}`);
+//     marker.on("click", () => {
+//       setPanel(loc.name, loc.description, loc.image);
+//     });
+//   }
+// });
 
   // === CLICK-TO-GET-GRID TOOL (THIS IS THE NEW BIT) ===
   // Click anywhere on the map and it will show you the exact grid cell [col,row]
-  map.on("click", (e) => {
+ map.on("click", (e) => {
     const x = e.latlng.lng;
     const y = e.latlng.lat;
 
@@ -310,4 +411,15 @@ const imgH = 4096;
 
     console.log(text, "pixels:", Math.round(x), Math.round(y));
   });
+
+  // === Chapter dropdown wiring (test only) ===
+  const chapterSelect = document.getElementById("chapterSelect");
+  if (chapterSelect) {
+    chapterSelect.addEventListener("change", () => {
+      const ch = parseInt(chapterSelect.value, 10) || 0;
+      console.log("Chapter changed to:", ch);
+      renderPinsForChapter(ch, imgW, imgH, markerLayer);
+    });
+  }
+
 });
