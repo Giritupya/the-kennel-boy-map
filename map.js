@@ -32,7 +32,7 @@ image: "assets/locations/deepenwood.webp"
     type: "Cottage",
     ref: "297286", // placeholder
     description: "A modest woodland dwelling set along a quiet forest track, lamplight warm against deep timber and leaf-shadow. Within its walls, counsel is given and roads begin to shift.",
-image: "assets/locations/Ollwens-Cottage.webp"
+image: "assets/locations/ollwens-cottage.webp"
   },
   {
     id: "greymoss-hollow",
@@ -40,7 +40,7 @@ image: "assets/locations/Ollwens-Cottage.webp"
     type: "town",
     ref: "285256", // placeholder
     description: "Mist-heavy and close with damp, a place where firelight fights to feel welcoming. The tavern crackles and mutters, windows fogged like the world outside wants in — smoke, sour ale, wet wool, and the sense that everyone’s listening.",
-image: "assets/locations/Greymoss-Hollow.webp"
+image: "assets/locations/greymoss-hollow.webp"
   },
   {
     id: "breys-rescue",
@@ -48,7 +48,6 @@ image: "assets/locations/Greymoss-Hollow.webp"
     type: "town",
     ref: "276273", // placeholder
     description: "The shape was curled tight into the roots — tangled in them, almost grown into them. For a moment he thought it was part of the tree itself. Then he saw the shimmer of russet fur beneath the crust of lichen. The faintest rise and fall of breath.",
-
 image: "assets/locations/breys-rescue.webp"
   },
   {
@@ -65,7 +64,7 @@ image: "assets/locations/misty-foothills.webp"
     type: "town",
     ref: "265286", // placeholder
     description: "A bowl of ruin shrouded in fog — ash underfoot, silence overhead, and the feeling that the village wasn’t merely destroyed… it was emptied. Blackened beams, swallowed stone walls, and a well at the centre like an open mouth.",
-image: "assets/locations/Greymoss-Ruin.webp"
+image: "assets/locations/greymoss-hollow-ruin.webp"
   },
   {
     id: "hearthmere",
@@ -97,7 +96,7 @@ image: "assets/locations/dextyns-rescue.webp"
     type: "town",
     ref: "361211", // placeholder
     description: "A working town turned wary, the last solid “normal” Bram clings to for a while — kindness, faces, a few warm memories… and then the road out again. Beyond it, the southern way thins into older tracks and quieter places.",
-image: "assets/locations/Greyharbour-Rest.webp"
+image: "assets/locations/greyharbour-rest.webp"
   },
   {
     id: "horse-trader",
@@ -105,7 +104,7 @@ image: "assets/locations/Greyharbour-Rest.webp"
     type: "town",
    ref: "373174", // placeholder
     description: "Bram laid a hand against the horse’s warm neck. “Veyrun,” he said softly—the name rising unbidden to his tongue.",
-image: "assets/locations/Veyrun.webp"
+image: "assets/locations/veyrun.webp"
   },
   {
     id: "ash-hollow",
@@ -113,7 +112,7 @@ image: "assets/locations/Veyrun.webp"
     type: "town",
     ref: "331200", // placeholder
     description: "A name that still carries weight, even after the place itself is gone. They say it burned out years ago — and that when the wind turns, the ground remembers.",
-image: "assets/locations/Ash-Hollow.webp"
+image: "assets/locations/ash-hollow.webp"
   },
   {
     id: "estmere",
@@ -137,7 +136,7 @@ image: "assets/locations/caravan.webp"
     type: "town",
    ref: "446205", // placeholder
     description: "A ruined rise on the ash plains, where fractured stone and wind-blown soot mark the bones of a town that did not survive its own history. Time feels thinner here, as if memory presses too close to the surface.",
-image: "assets/locations/Barrow-Hill.webp"
+image: "assets/locations/barrow-hill.webp"
   },
   {
     id: "fallen-archive",
@@ -145,7 +144,7 @@ image: "assets/locations/Barrow-Hill.webp"
     type: "Library",
     ref: "456282", // placeholder
     description: "A collapsed mage library buried along the ash plains, its fractured halls holding the silence of unfinished thought. Knowledge lingers in its ruins, but not safely.",
-image: "assets/locations/The-Fallen-Archive.webp" 
+image: "assets/locations/the-fallen-archive.webp" 
   },
 {
     id: "brooke-haven",
@@ -168,7 +167,7 @@ image: "assets/locations/brooke-haven.webp"
     type: "city",
     ref: "369449", // placeholder
     description: "A place where stories arrive before people do — and where Bram’s name can travel faster than he ever could. Power lives behind gates and in whispers, and the city doesn’t care whether a tale is true… only whether it spreads.",
-image: "assets/locations/The-Capital.webp"
+image: "assets/locations/the-capital.webp"
   },
   { 
     id: "battle",
@@ -205,14 +204,38 @@ const chapterReveals = {
   20: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere"],
   21: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere"],
   22: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan"],
-  23: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan","barrow-hill"],
+  23: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan","barrow-hill"],
   24: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan","barrow-hill"],
-  25: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan","barrow-hill"],
+  25: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan","barrow-hill"],
   26: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan","barrow-hill", "fallen-archive"],
   27: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan","barrow-hill", "fallen-archive"],
   28: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan","barrow-hill", "fallen-archive"],
   29: ["rimeholt", "deepenwood", "ollwens-cottage", "greymoss-hollow", "misty-foothills", "breys-rescue", "greymoss-hollow-ruins", "hearthmere", "vale-hallow", "dextyns-rescue", "greyharbour-rest", "horse-trader", "ash-hollow", "estmere", "caravan","barrow-hill", "fallen-archive", "battle"],
 };
+function focusLocation(latlng, loc) {
+
+  if (!map) return;
+
+  const flyZoom = 0.6;
+  const finalZoom = 1.2;
+
+  map.flyTo(latlng, flyZoom, {
+    animate: true,
+    duration: 1.3
+  });
+
+  map.once("moveend", function () {
+    map.flyTo(latlng, finalZoom, {
+      animate: true,
+      duration: 0.8
+    });
+
+    setTimeout(() => {
+      setPanel(loc.name, loc.description, loc.image);
+    }, 850);
+  });
+
+}
 
 function renderPinsForChapter(chapter, imgW, imgH, markerLayer) {
   markerLayer.clearLayers();
@@ -232,11 +255,27 @@ function renderPinsForChapter(chapter, imgW, imgH, markerLayer) {
 
     const marker = L.marker(latlng).addTo(markerLayer);
 
+marker.on("mouseover", function () {
+  const el = this.getElement();
+  if (el) {
+    el.style.filter = "drop-shadow(0 0 6px gold)";
+    el.style.transition = "filter 0.15s ease";
+    el.style.zIndex = "1000";
+  }
+});
+
+marker.on("mouseout", function () {
+  const el = this.getElement();
+  if (el) {
+    el.style.filter = "";
+    el.style.zIndex = "";
+  }
+});
     if (loc.id === "fallen-archive") {
       marker.on("click", () => startVelisTransition());
     } else {
       marker.bindPopup(`<b>${loc.name}</b><br>${loc.description}`);
-      marker.on("click", () => setPanel(loc.name, loc.description, loc.image));
+      marker.on("click", () => focusLocation(latlng, loc));
     }
   });
 }
