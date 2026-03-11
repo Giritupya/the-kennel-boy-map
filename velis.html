@@ -5,38 +5,163 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Scriptorium of Velis</title>
   <link rel="stylesheet" href="styles.css" />
-<link rel="stylesheet" href="velis-atmosphere.css" />
+  <link rel="stylesheet" href="velis-atmosphere.css" />
 </head>
 
 <body class="velis-page">
 
   <div class="velis-bg"></div>
-<div class="velis-vignette"></div>
-<div class="velis-haze"></div>
-<div class="velis-dust"></div>
+  <div class="velis-vignette"></div>
+  <div class="velis-haze"></div>
+  <div class="velis-dust"></div>
 
-  <header class="wrap header">
-    <div>
+  <header class="velis-topbar">
+    <div class="velis-topbar-left">
       <h1>The Scriptorium of Velis</h1>
-      <p class="sub">You have stepped beyond the map.</p>
+      <p class="sub">Step lightly. Not every record wishes to be found.</p>
     </div>
-    <nav class="nav">
-      <a href="map.html">Back to Map</a>
+
+    <nav class="velis-topbar-right">
+      <a href="map.html" class="velis-back-link">Back to Map</a>
     </nav>
   </header>
 
-  <main class="wrap">
-    <section class="card hero velis-card">
-      <h2>Under Construction</h2>
-      <p>
-        This is the doorway page. Next we’ll build the Scriptorium interior and begin placing curated fragments.
-      </p>
-    </section>
-  </main>
+  <main class="velis-room" id="velisRoom">
 
-  <footer class="wrap footer">
-    <p>© The Kennel Boy</p>
-  </footer>
+    <div class="velis-scene">
+
+      <!-- Hotspots -->
+      
+  <div
+  class="velis-podium velis-hotspot velis-hotspot-podium is-active"
+  data-title="The Great Book of Velis"
+  data-text="A vast iron-bound volume rests upon the central podium. This will become the main reading station for Book One lore."
+>
+  <div class="velis-book-object"></div>
+
+  <div class="velis-podium-top"></div>
+  <div class="velis-podium-body"></div>
+  <div class="velis-podium-base"></div>
+</div>
+
+      <button
+        class="velis-hotspot velis-hotspot-left"
+        data-title="Kennel Records"
+        data-text="Dusty shelves of copied notes, fragment ledgers, and hound accounts. Later this can hold entries for the Twelve, the Joining, and keeper records."
+      >
+        <span>Left Shelf</span>
+      </button>
+
+      <button
+        class="velis-hotspot velis-hotspot-right"
+        data-title="Restricted Stacks"
+        data-text="These shelves feel older than the hall itself. Perfect place for damaged texts, sealed entries, and hints toward prequels."
+      >
+        <span>Right Shelf</span>
+      </button>
+
+      <!-- Optional ambient label -->
+      <div class="velis-room-label">
+        Scriptorium Chamber
+      </div>
+    </div>
+
+    <aside class="velis-panel">
+      <div class="velis-panel-inner">
+        <p class="velis-panel-kicker">Archive Focus</p>
+        <h2 id="velisPanelTitle">The Great Book of Velis</h2>
+        <p id="velisPanelText">
+          A vast iron-bound volume rests upon the central podium. This will become the main reading station for Book One lore.
+        </p>
+
+        <div class="velis-panel-actions">
+          <button id="velisOpenButton" class="velis-action-button" type="button">
+            Open Record
+          </button>
+        </div>
+
+        <div class="velis-panel-note">
+          For now this button is only a placeholder. Once the room works, we’ll make it open the real book UI.
+        </div>
+      </div>
+    </aside>
+
+  </main>
+  <div id="velisBookOverlay" class="velis-book-overlay hidden">
+    <div class="velis-book">
+      <button id="velisBookClose" class="velis-book-close">✕</button>
+
+      <div class="velis-book-pages">
+        <div class="velis-book-page">
+          <h2>The Great Book of Velis</h2>
+
+          <p>
+            The Scriptorium of Velis was once the greatest archive of the western kingdoms.
+            Its shelves held records copied across centuries — accounts of wars, bindings,
+            oaths, and the quiet work of those who guarded the world from darker things.
+          </p>
+
+          <p>
+            Much of the original archive was lost when Velis fell. What remains here are
+            fragments gathered by later hands: keeper records, copied scrolls,
+            damaged chronicles, and whispers of truths the world has long forgotten.
+          </p>
+        </div>
+
+        <div class="velis-book-page">
+          <h3>The Binding</h3>
+
+          <p>
+            Nearly a thousand years ago the being now called the Godbeast was bound beneath
+            the earth by a gathering of mages and wardens.
+          </p>
+
+          <p>
+            The act reshaped the fate of kingdoms and led to the creation of the watchers
+            who would guard the prison in secret.
+          </p>
+
+          <p>
+            Even now, the full truth of that night is debated.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const hotspots = document.querySelectorAll('.velis-hotspot');
+    const panelTitle = document.getElementById('velisPanelTitle');
+    const panelText = document.getElementById('velisPanelText');
+    const openButton = document.getElementById('velisOpenButton');
+    const bookOverlay = document.getElementById('velisBookOverlay');
+    const closeBook = document.getElementById('velisBookClose');
+const room = document.getElementById('velisRoom');
+
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('click', () => {
+        hotspots.forEach(h => h.classList.remove('is-active'));
+        hotspot.classList.add('is-active');
+
+        panelTitle.textContent = hotspot.dataset.title;
+        panelText.textContent = hotspot.dataset.text;
+      });
+    });
+
+    openButton.addEventListener('click', () => {
+
+  room.classList.add('velis-zoom');
+
+  setTimeout(() => {
+    bookOverlay.classList.remove('hidden');
+  }, 900);
+
+});
+
+    closeBook.addEventListener('click', () => {
+      bookOverlay.classList.add('hidden');
+    });
+  </script>
 
 </body>
 </html>
