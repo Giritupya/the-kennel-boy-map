@@ -131,12 +131,20 @@
   </div>
 </div>
 
+<div id="velisMobileOverlay" class="velis-mobile-overlay hidden">
+  <button id="velisMobileClose" class="velis-mobile-close">✕</button>
+  <div id="velisMobileContent" class="velis-mobile-content"></div>
+</div>
+
  <!-- Shelf Close-Up Scene -->
 <div id="velisShelfScene" class="velis-shelf-scene hidden">
 
   <button id="velisBackBtn">← Back</button>
 
   <div class="velis-shelf-view left">
+  <div class="velis-shelf-viewport">
+    <div class="velis-shelf-canvas">
+      <img src="assets/velis/velis-shelf-left.webp" alt="Left shelf" class="velis-shelf-image-mobile">
 
     <!-- Hotspot 1 -->
     <div class="velis-shelf-hotspot hotspot-1" data-type="fragments">
@@ -187,7 +195,9 @@
     <div class="velis-shelf-hotspot hotspot-10" data-type="book-6">
       <span>Unknown Gate</span>
     </div>
-
+    </div>
+  </div>
+  
   </div>
 
   <div class="velis-shelf-view right" style="display: none;">
@@ -344,10 +354,22 @@ rightShelf.addEventListener('click', () => {
       if (!entry) return;
 
       if (entry.kind === 'book') {
-        bookPages.innerHTML = entry.pages;
-        bookOverlay.classList.remove('hidden');
-        return;
-      }
+
+  // MOBILE
+  if (window.innerWidth <= 768) {
+    const mobileOverlay = document.getElementById('velisMobileOverlay');
+    const mobileContent = document.getElementById('velisMobileContent');
+
+    mobileContent.innerHTML = entry.pages;
+    mobileOverlay.classList.remove('hidden');
+    return;
+  }
+
+  // DESKTOP
+  bookPages.innerHTML = entry.pages;
+  bookOverlay.classList.remove('hidden');
+  return;
+}
 
       if (entry.kind === 'scroll') {
         scrollImg.src = entry.image;
@@ -362,6 +384,12 @@ rightShelf.addEventListener('click', () => {
   scrollClose.addEventListener('click', () => {
     scrollOverlay.classList.add('hidden');
   });
+  const mobileOverlay = document.getElementById('velisMobileOverlay');
+const mobileClose = document.getElementById('velisMobileClose');
+
+mobileClose.addEventListener('click', () => {
+  mobileOverlay.classList.add('hidden');
+});
 });
 </script>
 </body>
