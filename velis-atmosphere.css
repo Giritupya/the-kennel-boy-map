@@ -343,42 +343,86 @@ filter: brightness(0.75) contrast(1.05);
   display: none;
 }
 
-.velis-book {
-  width: min(900px, 90vw);
-  height: min(520px, 80vh);
-  background: #f4e9d8;
-  border-radius: 12px;
-  box-shadow: 0 40px 120px rgba(0,0,0,0.55);
+.velis-book-shell {
   position: relative;
-  padding: 40px;
+  width: min(1380px, 98vw);
+  max-height: 95vh;
+}
+
+.velis-book-page-left {
+  left: 19%;
+  top: 20%;
+  width: 29%;
+  height: 62%;
+}
+
+.velis-book-page-right {
+  right: 19%;
+  top: 20%;
+  width: 29%;
+  height: 62%;
+}
+
+.velis-book-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5));
 }
 
 .velis-book-pages {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .velis-book-page {
-  overflow-y: auto;
+  position: absolute;
   font-family: "Georgia", serif;
   color: #2b2419;
+  line-height: 1.55;
+  pointer-events: auto;
+  overflow-y: auto;
 }
 
 .velis-book-page h2,
 .velis-book-page h3 {
   margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.velis-book-page p {
+  margin: 0 0 14px;
 }
 
 .velis-book-close {
   position: absolute;
-  top: 12px;
-  right: 14px;
-  background: none;
-  border: none;
-  font-size: 22px;
+  top: 2%;
+  right: 2%;
+  z-index: 10;
+
+  background: rgba(245, 235, 215, 0.95);
+  color: #2b2419;
+  border: 1px solid rgba(60, 40, 20, 0.25);
+  border-radius: 10px;
+
+  font-size: 24px;
+  line-height: 1;
+  padding: 8px 12px;
   cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.velis-book-close:hover {
+  background: rgba(255, 245, 225, 1);
+  transform: scale(1.05);
 }
 /* =========================
    Velis Podium
@@ -532,4 +576,328 @@ filter: brightness(0.75) contrast(1.05);
 .velis-zoom{
   transform: scale(1.15);
   transition: transform 1.2s ease;
+}
+/* Shelf scene system */
+.velis-shelf-scene {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 20;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Shelf views */
+.velis-shelf-view {
+  position: absolute;
+  inset: 0;
+}
+
+.velis-shelf-view.left {
+  background: url('assets/velis/velis-shelf-left.webp') center/cover no-repeat;
+}
+
+.velis-shelf-view.right {
+  background: url('assets/velis/velis-shelf-right.webp') center/cover no-repeat;
+}
+
+/* Back button */
+#velisBackBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 30;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Shelf hotspot */
+.velis-shelf-hotspot {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.velis-shelf-hotspot span {
+  background: rgba(0,0,0,0.6);
+  padding: 8px 10px;
+}
+
+
+@keyframes velisScrollOpen {
+  0% {
+    transform: scaleY(0.03) scaleX(0.98);
+    opacity: 0;
+  }
+
+  20% {
+    transform: scaleY(0.18) scaleX(0.99);
+    opacity: 1;
+  }
+
+  45% {
+    transform: scaleY(0.45) scaleX(1);
+    opacity: 1;
+  }
+
+  70% {
+    transform: scaleY(0.78) scaleX(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 1;
+  }
+}
+
+
+#velisScrollClose {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: rgba(244, 233, 216, 0.9);
+  font-size: 20px;
+  cursor: pointer;
+  color: #2b2419;
+  z-index: 50;
+  pointer-events: auto;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+
+.velis-scroll-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 12, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.velis-scroll-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.velis-scroll {
+  position: relative;
+  width: min(760px, 92vw);
+  max-height: 78vh;
+  transform-origin: center top;
+  transform: scaleY(0.03);
+  opacity: 0;
+  animation: velisScrollOpen 1.6s cubic-bezier(.25,.9,.2,1) forwards;
+}
+.velis-scroll-inner {
+  position: absolute;
+  top: 18%;
+  left: 22%;
+  right: 22%;
+  bottom: 18%;
+  z-index: 2;
+
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 6px 10px;
+
+  color: #2b2419;
+  font-family: "Georgia", serif;
+  text-align: center;
+  line-height: 1.5;
+
+  opacity: 0;
+  animation: velisScrollTextIn 0.8s ease 1s forwards;
+}
+
+.velis-scroll-inner h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+}
+
+.velis-scroll-inner p {
+  margin: 0 0 10px;
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+}
+
+
+.velis-scroll-img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  pointer-events: none;
+  mix-blend-mode: multiply;
+
+  /* ❌ remove this */
+  /* clip-path: inset(6% 3% 8% 3%); */
+
+  /* ✅ add this instead */
+  mask-image: linear-gradient(to right, 
+    transparent 0%, 
+    black 8%, 
+    black 92%, 
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(to right, 
+    transparent 0%, 
+    black 8%, 
+    black 92%, 
+    transparent 100%
+  );
+}
+
+.velis-scroll-paper {
+  position: relative;
+  max-height: 78vh;
+  overflow-y: auto;
+
+  background:
+    radial-gradient(ellipse at top, rgba(0,0,0,0.08), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(0,0,0,0.12), transparent 60%),
+    linear-gradient(180deg, #f4e9d8 0%, #e6d3aa 100%);
+
+  border-radius: 6px;
+  padding: 36px 40px 34px;
+
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.4),
+    inset 0 -6px 12px rgba(0,0,0,0.15),
+    0 40px 120px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes velisScrollTextIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes velisScrollOpen {
+  0% {
+    transform: scaleY(0.03) scaleX(0.88);
+    opacity: 0;
+  }
+
+  35% {
+    transform: scaleY(0.35) scaleX(0.9);
+    opacity: 1;
+  }
+
+  65% {
+    transform: scaleY(1.04) scaleX(0.96);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 1;
+  }
+}
+.velis-shelf-hotspot {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* HOTSPOT POSITIONS — tweak these */
+/*Left Manuscript*/
+.hotspot-1 {
+  left: 20%;
+  top: 58%;
+}
+/*Ledger*/
+.hotspot-2 {
+  left: 50%;
+  top: 53%;
+}
+/*Map*/
+.hotspot-3 {
+  position: absolute;
+  left: 65%;
+  top: 85%;
+}
+/*Middle Scroll*/
+.hotspot-4 {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+}
+/*Bestiary*/
+.hotspot-5 {
+  left: 23.5%;
+  top: 34%;
+}
+/*Watcher Notes*/
+.hotspot-6 {
+  left: 28%;
+  top: 38%;
+}
+/*Flame Record*/
+.hotspot-7 {
+  left: 50%;
+  top: 65%;
+}
+/*Velis Codex*/
+.hotspot-8 {
+  left: 50%;
+  top: 60%;
+}
+/*Sealed Scroll*/
+.hotspot-9 {
+  left: 41%;
+  top: 75.5%;
+}
+/*Unknown Gate*/
+.hotspot-10 {
+  left: 50%;
+  top: 70%;
+}
+
+
+/* Visual label */
+.velis-shelf-hotspot span {
+  background: rgba(0,0,0,0.6);
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* =========================
+   RIGHT SHELF HOTSPOTS
+   ========================= */
+/*Restricted Ledger*/
+.hotspot-r1 {
+  left: 30%;
+  top: 39%;
+}
+
+/*Sealed Scroll*/
+.hotspot-r2 {
+  left: 62%;
+  top: 68%;
+}
+/*Damaged Codex*/
+.hotspot-r3 {
+  left: 40%;
+  top: 70%;
+}
+
+.hotspot-r4 {
+  left: 70%;
+  top: 09%;
 }

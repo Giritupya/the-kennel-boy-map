@@ -88,80 +88,282 @@
 
   </main>
   <div id="velisBookOverlay" class="velis-book-overlay hidden">
-    <div class="velis-book">
-      <button id="velisBookClose" class="velis-book-close">✕</button>
+  <div class="velis-book-shell">
+    <img src="assets/velis/velis-book-1.webp" class="velis-book-img" alt="Open Book">
 
-      <div class="velis-book-pages">
-        <div class="velis-book-page">
-          <h2>The Great Book of Velis</h2>
+    <button id="velisBookClose" class="velis-book-close">✕</button>
 
-          <p>
-            The Scriptorium of Velis was once the greatest archive of the western kingdoms.
-            Its shelves held records copied across centuries — accounts of wars, bindings,
-            oaths, and the quiet work of those who guarded the world from darker things.
-          </p>
+    <div class="velis-book-pages">
+      <div class="velis-book-page velis-book-page-left">
+        <h2>The Great Book of Velis</h2>
 
-          <p>
-            Much of the original archive was lost when Velis fell. What remains here are
-            fragments gathered by later hands: keeper records, copied scrolls,
-            damaged chronicles, and whispers of truths the world has long forgotten.
-          </p>
-        </div>
+        <p>
+          The Scriptorium of Velis was once the greatest archive of the western kingdoms.
+          Its shelves held records copied across centuries — accounts of wars, bindings,
+          oaths, and the quiet work of those who guarded the world from darker things.
+        </p>
 
-        <div class="velis-book-page">
-          <h3>The Binding</h3>
+        <p>
+          Much of the original archive was lost when Velis fell. What remains here are
+          fragments gathered by later hands: keeper records, copied scrolls,
+          damaged chronicles, and whispers of truths the world has long forgotten.
+        </p>
+      </div>
 
-          <p>
-            Nearly a thousand years ago the being now called the Godbeast was bound beneath
-            the earth by a gathering of mages and wardens.
-          </p>
+      <div class="velis-book-page velis-book-page-right">
+        <h3>The Binding</h3>
 
-          <p>
-            The act reshaped the fate of kingdoms and led to the creation of the watchers
-            who would guard the prison in secret.
-          </p>
+        <p>
+          Nearly a thousand years ago the being now called the Godbeast was bound beneath
+          the earth by a gathering of mages and wardens.
+        </p>
 
-          <p>
-            Even now, the full truth of that night is debated.
-          </p>
-        </div>
+        <p>
+          The act reshaped the fate of kingdoms and led to the creation of the watchers
+          who would guard the prison in secret.
+        </p>
+
+        <p>
+          Even now, the full truth of that night is debated.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Shelf Close-Up Scene -->
+<div id="velisShelfScene" class="velis-shelf-scene hidden">
+
+  <button id="velisBackBtn">← Back</button>
+
+  <div class="velis-shelf-view left">
+
+    <!-- Hotspot 1 -->
+    <div class="velis-shelf-hotspot hotspot-1" data-type="fragments">
+      <span>Prophecy</span>
+    </div>
+
+    <!-- Hotspot 2 -->
+    <div class="velis-shelf-hotspot hotspot-2" data-type="book-1">
+      <span>Ledger</span>
+    </div>
+
+    <!-- Hotspot 3 -->
+    <div class="velis-shelf-hotspot hotspot-3" data-type="map">
+      <span>Map</span>
+    </div>
+
+    <!-- Hotspot 4 -->
+    <div class="velis-shelf-hotspot hotspot-4" data-type="scroll">
+      <span>Scroll</span>
+    </div>
+
+    <!-- Hotspot 5 -->
+    <div class="velis-shelf-hotspot hotspot-5" data-type="book-2">
+      <span>Bestiary</span>
+    </div>
+
+    <!-- Hotspot 6 -->
+<div class="velis-shelf-hotspot hotspot-6" data-type="book-3">
+  <span>Watcher<br>Notes</span>
+</div>
+
+    <!-- Hotspot 7 -->
+    <div class="velis-shelf-hotspot hotspot-7" data-type="book-4">
+      <span>Flame Record</span>
+    </div>
+
+    <!-- Hotspot 8 -->
+    <div class="velis-shelf-hotspot hotspot-8" data-type="book-5">
+      <span>Velis Codex</span>
+    </div>
+
+    <!-- Hotspot 9 -->
+    <div class="velis-shelf-hotspot hotspot-9" data-type="scroll-3">
+      <span>Sealed Scroll</span>
+    </div>
+
+<!-- Hotspot 10 -->
+    <div class="velis-shelf-hotspot hotspot-10" data-type="book-6">
+      <span>Unknown Gate</span>
+    </div>
+
+  </div>
+
+  <div class="velis-shelf-view right" style="display: none;">
+
+    <!-- Right Hotspot 1 -->
+    <div class="velis-shelf-hotspot hotspot-r1" data-type="restricted-ledger">
+      <span>Restricted Ledger</span>
+    </div>
+
+    <!-- Right Hotspot 2 -->
+    <div class="velis-shelf-hotspot hotspot-r2" data-type="sealed-scroll">
+      <span>Sealed Scroll</span>
+    </div>
+
+    <!-- Right Hotspot 3 -->
+    <div class="velis-shelf-hotspot hotspot-r3" data-type="damaged-codex">
+      <span>Damaged Codex</span>
+    </div>
+
+    <!-- Right Hotspot 4 -->
+    <div class="velis-shelf-hotspot hotspot-r4" data-type="prelude-fragment">
+      <span>Prelude Fragment</span>
+    </div>
+
+  </div>
+
+  <div id="velisScrollOverlay" class="velis-scroll-overlay hidden">
+    <div class="velis-scroll">
+      <img src="assets/velis/velis-scroll-1.webp" class="velis-scroll-img">
+      <button id="velisScrollClose">✕</button>
+      <div class="velis-scroll-inner">
+        <h2>Kennel Record Fragment</h2>
+        <p>
+          The hounds were not always bound as they are now. Before the Joining,
+          they were something else — something closer to the old world than the
+          one we walk in today.
+        </p>
+        <p>
+          What was done to them was not cruelty. It was necessity.
+        </p>
       </div>
     </div>
   </div>
 
-  <script>
-    const hotspots = document.querySelectorAll('.velis-hotspot');
-    const panelTitle = document.getElementById('velisPanelTitle');
-    const panelText = document.getElementById('velisPanelText');
-    const openButton = document.getElementById('velisOpenButton');
-    const bookOverlay = document.getElementById('velisBookOverlay');
-    const closeBook = document.getElementById('velisBookClose');
-const room = document.getElementById('velisRoom');
+</div>
 
-    hotspots.forEach(hotspot => {
-      hotspot.addEventListener('click', () => {
-        hotspots.forEach(h => h.classList.remove('is-active'));
-        hotspot.classList.add('is-active');
+<script src="velis-left-shelf-data.js"></script>
+<script src="velis-right-shelf-data.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const hotspots = document.querySelectorAll('.velis-hotspot');
+  const panelTitle = document.getElementById('velisPanelTitle');
+  const panelText = document.getElementById('velisPanelText');
+  const openButton = document.getElementById('velisOpenButton');
 
-        panelTitle.textContent = hotspot.dataset.title;
-        panelText.textContent = hotspot.dataset.text;
-      });
+  const bookOverlay = document.getElementById('velisBookOverlay');
+  const bookPages = document.querySelector('.velis-book-pages');
+  const closeBook = document.getElementById('velisBookClose');
+
+  const scrollOverlay = document.getElementById('velisScrollOverlay');
+  const scrollImg = document.querySelector('.velis-scroll-img');
+  const scrollContent = document.querySelector('.velis-scroll-inner');
+  const scrollClose = document.getElementById('velisScrollClose');
+
+ const room = document.getElementById('velisRoom');
+const leftShelf = document.querySelector('.velis-hotspot-left');
+const rightShelf = document.querySelector('.velis-hotspot-right');
+const shelfScene = document.getElementById('velisShelfScene');
+const shelfHotspots = document.querySelectorAll('.velis-shelf-hotspot');
+let activeShelfData = VELIS_LEFT_SHELF;
+  const backBtn = document.getElementById('velisBackBtn');
+
+
+  
+
+  hotspots.forEach(hotspot => {
+    hotspot.addEventListener('click', () => {
+      hotspots.forEach(h => h.classList.remove('is-active'));
+      hotspot.classList.add('is-active');
+
+      panelTitle.textContent = hotspot.dataset.title;
+      panelText.textContent = hotspot.dataset.text;
     });
+  });
 
-    openButton.addEventListener('click', () => {
+  openButton.addEventListener('click', () => {
+    room.classList.add('velis-zoom');
 
-  room.classList.add('velis-zoom');
+    setTimeout(() => {
+      bookOverlay.classList.remove('hidden');
+    }, 900);
+  });
+
+  closeBook.addEventListener('click', () => {
+    bookOverlay.classList.add('hidden');
+  });
+
+// Enter left shelf scene
+leftShelf.addEventListener('click', () => {
+  activeShelfData = VELIS_LEFT_SHELF;
+
+  const leftShelfView = document.querySelector('.velis-shelf-view.left');
+  const rightShelfView = document.querySelector('.velis-shelf-view.right');
+
+  leftShelfView.style.display = 'block';
+  rightShelfView.style.display = 'none';
+
+  room.style.opacity = '0';
 
   setTimeout(() => {
-    bookOverlay.classList.remove('hidden');
-  }, 900);
-
+    shelfScene.classList.remove('hidden');
+    room.style.display = 'none';
+  }, 500);
 });
 
-    closeBook.addEventListener('click', () => {
-      bookOverlay.classList.add('hidden');
-    });
-  </script>
+// Enter right shelf scene
+rightShelf.addEventListener('click', () => {
+  activeShelfData = VELIS_RIGHT_SHELF;
 
+  const leftShelfView = document.querySelector('.velis-shelf-view.left');
+  const rightShelfView = document.querySelector('.velis-shelf-view.right');
+
+  leftShelfView.style.display = 'none';
+  rightShelfView.style.display = 'block';
+
+  room.style.opacity = '0';
+
+  setTimeout(() => {
+    shelfScene.classList.remove('hidden');
+    room.style.display = 'none';
+  }, 500);
+});
+
+  // Back to main room
+  backBtn.addEventListener('click', () => {
+    scrollOverlay.classList.add('hidden');
+    bookOverlay.classList.add('hidden');
+
+    room.style.display = 'block';
+
+    setTimeout(() => {
+      room.style.opacity = '1';
+    }, 50);
+
+    shelfScene.classList.add('hidden');
+  });
+
+  // Shelf hotspots use external data
+  shelfHotspots.forEach(hotspot => {
+    hotspot.addEventListener('click', () => {
+      const type = hotspot.dataset.type;
+     const entry = activeShelfData[type];
+
+      if (!entry) return;
+
+      if (entry.kind === 'book') {
+        bookPages.innerHTML = entry.pages;
+        bookOverlay.classList.remove('hidden');
+        return;
+      }
+
+      if (entry.kind === 'scroll') {
+        scrollImg.src = entry.image;
+        scrollContent.innerHTML = entry.html;
+        scrollOverlay.classList.remove('hidden');
+        return;
+      }
+    });
+  });
+
+  // Close scroll
+  scrollClose.addEventListener('click', () => {
+    scrollOverlay.classList.add('hidden');
+  });
+});
+</script>
 </body>
 </html>
+
