@@ -1095,3 +1095,40 @@ filter: brightness(0.75) contrast(1.05);
   }
 
 }
+/* Bigger map hotspot only */
+.velis-scroll-overlay.velis-map-open .velis-scroll {
+  width: min(1200px, 96vw);
+  max-height: 90vh;
+}
+
+.velis-scroll-overlay.velis-map-open .velis-scroll-inner {
+  top: 14%;
+  left: 16%;
+  right: 16%;
+  bottom: 14%;
+  padding: 0;
+}
+
+.velis-scroll-overlay.velis-map-open .velis-scroll-inner h2,
+.velis-scroll-overlay.velis-map-open .velis-scroll-inner p {
+  display: none;
+}
+/* Full spread map page */
+.velis-book-page-map {
+  position: absolute;
+  top: 14%;
+  left: 12%;
+  width: 76%;
+  height: 72%;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.velis-full-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}

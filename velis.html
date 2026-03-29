@@ -372,18 +372,26 @@ rightShelf.addEventListener('click', () => {
 }
 
       if (entry.kind === 'scroll') {
-        scrollImg.src = entry.image;
-        scrollContent.innerHTML = entry.html;
-        scrollOverlay.classList.remove('hidden');
-        return;
-      }
+  scrollImg.src = entry.image;
+  scrollContent.innerHTML = entry.html;
+
+  if (type === 'map') {
+    scrollOverlay.classList.add('velis-map-open');
+  } else {
+    scrollOverlay.classList.remove('velis-map-open');
+  }
+
+  scrollOverlay.classList.remove('hidden');
+  return;
+}
     });
   });
 
   // Close scroll
-  scrollClose.addEventListener('click', () => {
-    scrollOverlay.classList.add('hidden');
-  });
+ scrollClose.addEventListener('click', () => {
+  scrollOverlay.classList.add('hidden');
+  scrollOverlay.classList.remove('velis-map-open');
+});
   const mobileOverlay = document.getElementById('velisMobileOverlay');
 const mobileClose = document.getElementById('velisMobileClose');
 
