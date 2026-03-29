@@ -1132,3 +1132,38 @@ filter: brightness(0.75) contrast(1.05);
   height: auto;
   max-width: none;
 }
+/* =========================
+   Mobile map scroll fix
+   ========================= */
+@media (max-width: 768px) {
+  .velis-scroll {
+    width: 96vw;
+    max-height: 92vh;
+  }
+
+  .velis-scroll-inner {
+    top: 14%;
+    left: 12%;
+    right: 12%;
+    bottom: 14%;
+    padding: 4px 6px;
+  }
+
+  .velis-scroll-inner h2 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .velis-scroll-inner p {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
+  #velisScrollClose {
+    top: 6px;
+    right: 8px;
+    font-size: 18px;
+    padding: 4px 7px;
+  }
+}
