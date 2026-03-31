@@ -1142,12 +1142,19 @@ filter: brightness(0.75) contrast(1.05);
   }
 
   .velis-scroll-inner {
-    top: 14%;
-    left: 12%;
-    right: 12%;
-    bottom: 14%;
-    padding: 4px 6px;
-  }
+  position: absolute;
+  top: 14%;
+  left: 18%;
+  width: 64%;
+  bottom: 14%;
+  padding: 4px 6px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  text-align: center;
+}
 
   .velis-scroll-inner h2 {
     font-size: 1rem;
