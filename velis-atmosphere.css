@@ -967,62 +967,64 @@ filter: brightness(0.75) contrast(1.05);
   /* Prophecy */
   .hotspot-1 {
     left: 20%;
-    top: 57%;
+    top: 55%;
   }
 
   /* Ledger */
   .hotspot-2 {
     left: 50%;
-    top: 54%;
+    top: 52%;
   }
 
   /* Map */
   .hotspot-3 {
     left: 65%;
-    top: 80%;
+    top: 78%;
   }
 
   /* Scroll */
   .hotspot-4 {
     left: 47%;
-    top: 75%;
+    top: 73%;
   }
 
   /* Bestiary */
   .hotspot-5 {
     left: 23.5%;
-    top: 39%;
+    top: 37%;
   }
 
   /* Watcher Notes */
   .hotspot-6 {
     left: 28%;
-    top: 40%;
+    top: 38%;
   }
 
   /* Flame Record */
   .hotspot-7 {
     left: 50%;
-    top: 62%;
+    top: 60%;
   }
 
   /* Velis Codex */
   .hotspot-8 {
     left: 50%;
-    top: 58.5%;
+    top: 56.5%;
   }
 
   /* Sealed Scroll */
   .hotspot-9 {
     left: 41%;
-    top: 71%;
+    top: 69%;
   }
 
   /* Unknown Gate */
   .hotspot-10 {
     left: 50%;
-    top: 67%;
+    top: 65%;
   }
+
+}
 
 }
 .velis-mobile-overlay {
