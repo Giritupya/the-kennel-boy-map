@@ -124,20 +124,45 @@ const VELIS_LEFT_SHELF = {
     `
   },
 
-  "book-6": {
-    kind: "book",
-    image: "assets/velis/velis-book-6.webp",
-    pages: `
-      <div class="velis-book-page velis-book-page-left">
-        <h2>The Unknown Gate</h2>
-        <p>The only Gate in the Broken Lands that can not be opened. For a thousand year one clan has watched the gate preparing for whatever the Gate shows them.</p>
+"book-6": {
+  kind: "book",
+  image: "assets/velis/velis-book-6.webp",
+  pages: `
+    <div class="velis-book-page velis-book-page-left">
+      <h2>On the First Settlement of the Broken Lands</h2>
+
+      <p><em>Collected Accounts and Surviving Records</em></p>
+
+      <p>The people of the lost land are believed to have arrived through what is now known as the Sea Gate in a single great movement, comprising nine clans.</p>
+
+      <p>They did not come as conquerors, but as refugees, bringing with them what provisions, livestock, and tools could be carried across the sea.</p>
+
+      <p>Upon arrival, it quickly became apparent that the harbour and its surrounding structures could not accommodate the number of people who had crossed.</p>
+      <p>Though stone buildings already stood near the Sea Gate—ruined, but repairable—they were too few.</p> 
       </div>
 
+
       <div class="velis-book-page velis-book-page-right">
-        <p>The script shifts between languages long forgotten.</p>
-      </div>
-    `
-  },
+      <p>The majority of the ships were therefore dismantled, their timber, iron, and fittings repurposed for shelter and construction.</p>
+      <p>Temporary dwellings arose beyond the harbour in the form of shacks and crude halls, organised loosely by clan.</p>
+      <p>While each clan claimed its own space, the labour of dismantling the ships and erecting shelter was shared.</p>
+      <p>Before permanent settlement was undertaken, two clans were selected to scout the surrounding land.</p>
+    </div>
+
+    <div class="velis-book-page velis-book-page-left">
+      <h3>Further Settlement</h3>
+      <p>The scouts returned with reports of rivers, higher ground, and stretches of land better suited to planting than the narrow space around the harbour.</p>
+      <p>It was decided that the clans would not remain pressed against the Sea Gate longer than necessity demanded.</p>
+      <p>From those first surveys came the earliest road markings, boundary stones, and claims of settlement inland.</p>
+    </div>
+
+    <div class="velis-book-page velis-book-page-right">
+      <p>Though later records disagree on which clan moved first, most surviving accounts suggest the eastern families were the earliest to leave the harbour edge.</p>
+      <p>What began as a camp of survivors slowly took the shape of a people intending to endure.</p>
+      <p>From timber, salvaged iron, and patience, the first true settlements of the Broken Lands began.</p>
+    </div>
+  `
+},
 
   "scroll-3": {
     kind: "scroll",

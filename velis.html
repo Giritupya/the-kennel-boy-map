@@ -93,6 +93,13 @@
 
     <button id="velisBookClose" class="velis-book-close">✕</button>
 
+    <button id="velisPrevPage" class="velis-book-nav velis-book-nav-prev">◀</button>
+    <button id="velisNextPage" class="velis-book-nav velis-book-nav-next">▶</button>
+
+    <div class="velis-book-page-indicator">
+      <span id="velisPageIndicator">Pages 1–2</span>
+    </div>
+
     <div class="velis-book-pages">
       <div class="velis-book-page velis-book-page-left">
         <h2>The Great Book of Velis</h2>
@@ -128,6 +135,31 @@
         </p>
       </div>
     </div>
+  </div>
+</div>
+
+<div id="velisShelfBookOverlay" class="velis-book-overlay hidden">
+  <div class="velis-book-shell">
+    <img
+      id="velisShelfBookImage"
+      src="assets/velis/velis-book-1.webp"
+      class="velis-book-img"
+      alt="Open Book"
+    >
+
+    <button id="velisShelfBookClose" class="velis-book-close">✕</button>
+
+    <button id="velisShelfBookPrev" class="velis-book-nav velis-book-nav-prev" type="button">
+      ←
+    </button>
+
+    <button id="velisShelfBookNext" class="velis-book-nav velis-book-nav-next" type="button">
+      →
+    </button>
+
+    <div id="velisShelfBookPages" class="velis-book-pages"></div>
+
+    <div id="velisShelfBookCounter" class="velis-book-counter">1 / 1</div>
   </div>
 </div>
 
@@ -193,7 +225,7 @@
 
 <!-- Hotspot 10 -->
     <div class="velis-shelf-hotspot hotspot-10" data-type="book-6">
-      <span>Unknown Gate</span>
+      <span>The Broken Lands</span>
     </div>
     </div>
   </div>
@@ -253,9 +285,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const panelText = document.getElementById('velisPanelText');
   const openButton = document.getElementById('velisOpenButton');
 
-  const bookOverlay = document.getElementById('velisBookOverlay');
+   const bookOverlay = document.getElementById('velisBookOverlay');
   const bookPages = document.querySelector('.velis-book-pages');
   const closeBook = document.getElementById('velisBookClose');
+  const prevPageBtn = document.getElementById('velisPrevPage');
+  const nextPageBtn = document.getElementById('velisNextPage');
+  const pageIndicator = document.getElementById('velisPageIndicator');
+
+  let currentBookPages = [];
+  let currentSpreadIndex = 0;
 
   const scrollOverlay = document.getElementById('velisScrollOverlay');
   const scrollImg = document.querySelector('.velis-scroll-img');
@@ -293,6 +331,19 @@ let activeShelfData = VELIS_LEFT_SHELF;
 
   closeBook.addEventListener('click', () => {
     bookOverlay.classList.add('hidden');
+  });
+    prevPageBtn.addEventListener('click', () => {
+    if (currentSpreadIndex >= 2) {
+      currentSpreadIndex -= 2;
+      renderCurrentSpread();
+    }
+  });
+
+  nextPageBtn.addEventListener('click', () => {
+    if (currentSpreadIndex + 2 < currentBookPages.length) {
+      currentSpreadIndex += 2;
+      renderCurrentSpread();
+    }
   });
 
 // Enter left shelf scene
@@ -353,23 +404,25 @@ rightShelf.addEventListener('click', () => {
 
       if (!entry) return;
 
-      if (entry.kind === 'book') {
+          if (entry.kind === 'book') {
 
-  // MOBILE
-  if (window.innerWidth <= 768) {
-    const mobileOverlay = document.getElementById('velisMobileOverlay');
-    const mobileContent = document.getElementById('velisMobileContent');
+        // MOBILE
+        if (window.innerWidth <= 768) {
+          const mobileOverlay = document.getElementById('velisMobileOverlay');
+          const mobileContent = document.getElementById('velisMobileContent');
 
-    mobileContent.innerHTML = entry.pages;
-    mobileOverlay.classList.remove('hidden');
-    return;
-  }
+          mobileContent.innerHTML = entry.pages;
+          mobileOverlay.classList.remove('hidden');
+          return;
+        }
 
-  // DESKTOP
-  bookPages.innerHTML = entry.pages;
-  bookOverlay.classList.remove('hidden');
-  return;
-}
+        // DESKTOP
+        currentBookPages = splitBookIntoPages(entry.pages);
+        currentSpreadIndex = 0;
+        renderCurrentSpread();
+        bookOverlay.classList.remove('hidden');
+        return;
+      }
 
         if (entry.kind === 'scroll') {
   scrollImg.src = entry.image;
@@ -386,7 +439,35 @@ rightShelf.addEventListener('click', () => {
 }
     });
   });
+  function splitBookIntoPages(bookHtml) {
+    const temp = document.createElement('div');
+    temp.innerHTML = bookHtml;
 
+    const pages = Array.from(temp.querySelectorAll('.velis-book-page'));
+
+    return pages.map(page => page.outerHTML);
+  }
+
+  function renderCurrentSpread() {
+    const leftPage = currentBookPages[currentSpreadIndex] || `
+      <div class="velis-book-page velis-book-page-left"></div>
+    `;
+
+    const rightPage = currentBookPages[currentSpreadIndex + 1] || `
+      <div class="velis-book-page velis-book-page-right"></div>
+    `;
+
+    bookPages.innerHTML = leftPage + rightPage;
+
+    const leftNumber = currentSpreadIndex + 1;
+    const rightNumber = Math.min(currentSpreadIndex + 2, currentBookPages.length);
+
+    pageIndicator.textContent = `Pages ${leftNumber}–${rightNumber}`;
+
+    prevPageBtn.style.display = currentSpreadIndex === 0 ? 'none' : 'block';
+    nextPageBtn.style.display =
+      currentSpreadIndex + 2 >= currentBookPages.length ? 'none' : 'block';
+  }
   // Close scroll
  scrollClose.addEventListener('click', () => {
   scrollOverlay.classList.add('hidden');
