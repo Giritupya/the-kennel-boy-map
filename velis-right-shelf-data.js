@@ -27,6 +27,87 @@ const VELIS_RIGHT_SHELF = {
     `
   },
 
+"sealed-record": {
+  kind: "book",
+  pages: `
+    <div class="velis-book-page velis-book-page-left">
+      <h2>Sealed Record</h2>
+      <p>
+        This volume bears no title upon its spine. The lock has long since broken,
+        but the pages within remain bound by something more than metal.
+      </p>
+    </div>
+
+    <div class="velis-book-page velis-book-page-right">
+      <p>
+        The script shifts subtly as it is read, as though resisting a fixed meaning.
+      </p>
+    </div>
+
+    <div class="velis-book-page velis-book-page-left">
+      <h3>Fragment</h3>
+      <p>
+        “They believed the Gate closed. They were wrong.”
+      </p>
+    </div>
+
+    <div class="velis-book-page velis-book-page-right">
+      <p>
+        No author is recorded.
+      </p>
+    </div>
+  `
+},
+
+"field-journal": {
+  kind: "book",
+  pages: `
+    <div class="velis-book-page velis-book-page-left">
+      <h2>Field Journal</h2>
+      <p>
+        A weathered journal, its pages marked with mud, ash, and hurried ink.
+      </p>
+    </div>
+
+    <div class="velis-book-page velis-book-page-right">
+      <p>
+        Entries grow less structured over time, as though written under strain.
+      </p>
+    </div>
+
+    <div class="velis-book-page velis-book-page-left">
+      <p>
+        “The ground hums at night. Not sound—something else. You feel it in your bones.”
+      </p>
+    </div>
+
+    <div class="velis-book-page velis-book-page-right">
+      <p>
+        The final pages are torn out.
+      </p>
+    </div>
+  `
+},
+
+"index-card": {
+  kind: "scroll",
+  image: "assets/velis/velis-scroll-1.webp",
+  html: `
+    <h2>Archive Index Card</h2>
+    <p>
+      Entry reference incomplete.
+    </p>
+    <p>
+      Cross-links:
+    </p>
+    <p>
+      – Gate Watch Records<br>
+      – Deep Archive (restricted)<br>
+      – Uncatalogued fragments
+    </p>
+  `
+},
+
   "sealed-scroll": {
     kind: "scroll",
     image: "assets/velis/velis-scroll-3.webp",

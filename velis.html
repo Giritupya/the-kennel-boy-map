@@ -233,28 +233,47 @@
   </div>
 
   <div class="velis-shelf-view right" style="display: none;">
+  <div class="velis-shelf-viewport">
+    <div class="velis-shelf-canvas">
+      <img src="assets/velis/velis-shelf-right.webp" alt="Right shelf" class="velis-shelf-image-mobile">
 
-    <!-- Right Hotspot 1 -->
-    <div class="velis-shelf-hotspot hotspot-r1" data-type="restricted-ledger">
-      <span>Restricted Ledger</span>
+<!-- New Book 1 -->
+<div class="velis-shelf-hotspot hotspot-r5" data-type="sealed-record">
+  <span>Sealed Record</span>
+</div>
+
+<!-- New Book 2 -->
+<div class="velis-shelf-hotspot hotspot-r6" data-type="field-journal">
+  <span>Field Journal</span>
+</div>
+
+<!-- Index Card -->
+<div class="velis-shelf-hotspot hotspot-r7" data-type="index-card">
+  <span>Index Card</span>
+</div>
+
+      <!-- Right Hotspot 1 -->
+      <div class="velis-shelf-hotspot hotspot-r1" data-type="restricted-ledger">
+        <span>Restricted Ledger</span>
+      </div>
+
+      <!-- Right Hotspot 2 -->
+      <div class="velis-shelf-hotspot hotspot-r2" data-type="sealed-scroll">
+        <span>Sealed Scroll</span>
+      </div>
+
+      <!-- Right Hotspot 3 -->
+      <div class="velis-shelf-hotspot hotspot-r3" data-type="damaged-codex">
+        <span>Damaged Codex</span>
+      </div>
+
+      <!-- Right Hotspot 4 -->
+      <div class="velis-shelf-hotspot hotspot-r4" data-type="prelude-fragment">
+        <span>Prelude Fragment</span>
+      </div>
     </div>
-
-    <!-- Right Hotspot 2 -->
-    <div class="velis-shelf-hotspot hotspot-r2" data-type="sealed-scroll">
-      <span>Sealed Scroll</span>
-    </div>
-
-    <!-- Right Hotspot 3 -->
-    <div class="velis-shelf-hotspot hotspot-r3" data-type="damaged-codex">
-      <span>Damaged Codex</span>
-    </div>
-
-    <!-- Right Hotspot 4 -->
-    <div class="velis-shelf-hotspot hotspot-r4" data-type="prelude-fragment">
-      <span>Prelude Fragment</span>
-    </div>
-
   </div>
+</div>
 
   <div id="velisScrollOverlay" class="velis-scroll-overlay hidden">
     <div class="velis-scroll">
@@ -448,7 +467,7 @@ rightShelf.addEventListener('click', () => {
     return pages.map(page => page.outerHTML);
   }
 
-  function renderCurrentSpread() {
+    function renderCurrentSpread() {
     const leftPage = currentBookPages[currentSpreadIndex] || `
       <div class="velis-book-page velis-book-page-left"></div>
     `;
@@ -457,7 +476,17 @@ rightShelf.addEventListener('click', () => {
       <div class="velis-book-page velis-book-page-right"></div>
     `;
 
+    bookPages.classList.remove('is-turning');
+
     bookPages.innerHTML = leftPage + rightPage;
+
+    void bookPages.offsetWidth;
+
+    bookPages.classList.add('is-turning');
+
+    setTimeout(() => {
+      bookPages.classList.remove('is-turning');
+    }, 280);
 
     const leftNumber = currentSpreadIndex + 1;
     const rightNumber = Math.min(currentSpreadIndex + 2, currentBookPages.length);
