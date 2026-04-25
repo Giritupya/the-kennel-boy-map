@@ -232,6 +232,12 @@ function focusLocation(latlng, loc) {
 
     setTimeout(() => {
       setPanel(loc.name, loc.description, loc.image);
+
+      const panel = document.getElementById("infoPanel");
+      if (panel && window.innerWidth <= 980) {
+        panel.classList.add("mobile-open");
+      }
+
     }, 850);
   });
 
@@ -274,9 +280,8 @@ marker.on("mouseout", function () {
     if (loc.id === "fallen-archive") {
       marker.on("click", () => startVelisTransition());
     } else {
-      marker.bindPopup(`<b>${loc.name}</b><br>${loc.description}`);
-      marker.on("click", () => focusLocation(latlng, loc));
-    }
+  marker.on("click", () => focusLocation(latlng, loc));
+}
   });
 }
 
@@ -496,16 +501,38 @@ map.on("click", (e) => {
     .openOn(map);
 
   console.log(text, "pixels:", Math.round(x), Math.round(y));
+  const panel = document.getElementById("infoPanel");
+if (panel && window.innerWidth <= 980) {
+  panel.classList.remove("mobile-open");
+}
 });
 
-  // === Chapter dropdown wiring (test only) ===
-  const chapterSelect = document.getElementById("chapterSelect");
-  if (chapterSelect) {
-    chapterSelect.addEventListener("change", () => {
-      const ch = parseInt(chapterSelect.value, 10) || 0;
-      console.log("Chapter changed to:", ch);
-      renderPinsForChapter(ch, imgW, imgH, markerLayer);
-    });
-  }
+ const chapterSelect = document.getElementById("chapterSelect");
+if (chapterSelect) {
+  chapterSelect.addEventListener("change", () => {
+    const ch = parseInt(chapterSelect.value, 10) || 0;
+    console.log("Chapter changed to:", ch);
+
+    renderPinsForChapter(ch, imgW, imgH, markerLayer);
+
+    // 👇 CLOSE DRAWER ON MOBILE
+    const panel = document.getElementById("infoPanel");
+    if (panel && window.innerWidth <= 980) {
+      panel.classList.remove("mobile-open");
+    }
+  });
+}
+// =========================
+// Mobile panel toggle
+// =========================
+const mobileToggle = document.getElementById("mobilePanelToggle");
+const panel = document.getElementById("infoPanel");
+
+if (mobileToggle && panel) {
+  mobileToggle.addEventListener("click", () => {
+    panel.classList.toggle("mobile-open");
+  });
+}
+
 
 });

@@ -34,11 +34,19 @@
       <a href="map.html" class="active">Map</a>
     </nav>
   </header>
+  
+<button id="mobilePanelToggle" class="mobile-panel-toggle" type="button">
+  Map Info
+</button>
 
   <main class="map-wrap">
     <aside class="panel" id="infoPanel">
-<label for="chapterSelect">Chapter</label>
-<select id="chapterSelect">
+       <div class="panel-top-row">
+  <a href="index.html" class="panel-back-link">← Home</a>
+
+  <div class="panel-chapter">
+    <label for="chapterSelect">Chapter</label>
+    <select id="chapterSelect">
   <option value="0">Chapter 0 (Start)</option>
   <option value="1">Chapter 1</option>
   <option value="2">Chapter 2</option>
@@ -69,11 +77,12 @@
 <option value="27">Chapter 27</option>
 <option value="28">Chapter 28</option>
 <option value="29">Chapter 29</option>
-</select>
-      <h2 id="panelTitle">Welcome</h2>
-      <p id="panelText">
-        Click a marker on the map to see details here.
-      </p>
+    </select>
+  </div>
+</div>
+
+     <h2 id="panelTitle">Pick a chapter. Tap the pins.</h2>
+<p id="panelText"></p>
 
       <hr />
 
