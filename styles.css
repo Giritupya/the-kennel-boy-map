@@ -600,3 +600,52 @@ filter: brightness(0.75) contrast(1.05);
 .panel-back-link {
   white-space: nowrap;
 }
+
+.chapter-marker {
+  background: transparent;
+  border: none;
+}
+
+.scroll-marker {
+  position: relative;
+  width: 95px;
+  height: 75px;
+}
+
+.scroll-marker img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+.scroll-marker span {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #3a2f1c;
+  line-height: 1;
+
+  text-shadow: 0 1px 1px rgba(255,255,255,0.55);
+  pointer-events: none;
+}
+.scroll-marker {
+  position: relative;
+  width: 95px;
+  height: 75px;
+  transform: rotate(var(--rot, 0deg));
+}
+.chapter-marker,
+.scroll-marker {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.scroll-marker {
+  transition: transform 0.18s ease, filter 0.18s ease;
+}

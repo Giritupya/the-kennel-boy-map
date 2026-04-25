@@ -14,6 +14,7 @@ const locations = [
     id: "rimeholt",
     name: "Rimeholt Keep",
     type: "keep",
+    chapter: 1,
     ref: "305305", // placeholder - use click tool to get exact
     description: "Setting: A stone keep raised upon a high shoulder of rock above the frostplain’s edge, its wind-scoured battlements watching land that never quite forgets what lies beneath. The kennels breathe below its walls, and its bells carry farther than they should.",
 image: "assets/locations/rimeholt.webp"
@@ -22,6 +23,7 @@ image: "assets/locations/rimeholt.webp"
     id: "deepenwood",
     name: "Deepenwood",
     type: "nature",
+    chapter: 2,
     ref: "285304", // placeholder - use click tool to get exact
     description: "A dense stretch of old forest where the light thins and sound carries strangely between the trunks. The trees grow close and tall, their roots twisting through damp earth and forgotten paths. It is a place of uneasy quiet — not hostile, but watchful — where the world feels older than the roads that cut through it.",
 image: "assets/locations/deepenwood.webp"
@@ -30,6 +32,7 @@ image: "assets/locations/deepenwood.webp"
     id: "ollwens-cottage",
     name: "Ollwen's Cottage",
     type: "Cottage",
+    chapter: 3,
     ref: "297286", // placeholder
     description: "A modest woodland dwelling set along a quiet forest track, lamplight warm against deep timber and leaf-shadow. Within its walls, counsel is given and roads begin to shift.",
 image: "assets/locations/ollwens-cottage.webp"
@@ -38,6 +41,7 @@ image: "assets/locations/ollwens-cottage.webp"
     id: "greymoss-hollow",
     name: "Greymoss Hollow",
     type: "town",
+    chapter: 5,
     ref: "285256", // placeholder
     description: "Mist-heavy and close with damp, a place where firelight fights to feel welcoming. The tavern crackles and mutters, windows fogged like the world outside wants in — smoke, sour ale, wet wool, and the sense that everyone’s listening.",
 image: "assets/locations/greymoss-hollow.webp"
@@ -46,6 +50,7 @@ image: "assets/locations/greymoss-hollow.webp"
     id: "breys-rescue",
     name: "Brey's Rescue",
     type: "town",
+    chapter: 6,
     ref: "276273", // placeholder
     description: "The shape was curled tight into the roots — tangled in them, almost grown into them. For a moment he thought it was part of the tree itself. Then he saw the shimmer of russet fur beneath the crust of lichen. The faintest rise and fall of breath.",
 image: "assets/locations/breys-rescue.webp"
@@ -54,6 +59,7 @@ image: "assets/locations/breys-rescue.webp"
     id: "misty-foothills",
     name: "Misty Foothills",
     type: "town",
+    chapter: 5,
     ref: "279273", // placeholder
     description: "Mist-heavy and close with damp, a place where firelight fights to feel welcoming. The tavern crackles and mutters, windows fogged like the world outside wants in — smoke, sour ale, wet wool, and the sense that everyone’s listening.",
 image: "assets/locations/misty-foothills.webp"
@@ -62,6 +68,7 @@ image: "assets/locations/misty-foothills.webp"
     id: "greymoss-hollow-ruins",
     name: "Greymoss Hollow Ruins",
     type: "town",
+    chapter: 6,
     ref: "265286", // placeholder
     description: "A bowl of ruin shrouded in fog — ash underfoot, silence overhead, and the feeling that the village wasn’t merely destroyed… it was emptied. Blackened beams, swallowed stone walls, and a well at the centre like an open mouth.",
 image: "assets/locations/greymoss-hollow-ruin.webp"
@@ -70,6 +77,7 @@ image: "assets/locations/greymoss-hollow-ruin.webp"
     id: "hearthmere",
     name: "Hearthmere",
     type: "town",
+    chapter: 11,
     ref: "292241", // placeholder
     description: "A modest inland village built along a single east–west road that threads through open farmland and low hills. Stone and timber cottages stand close to the lane, their hearth smoke drifting gently above fields and hedgerows. It is a quiet stopping place on the road, where travellers pause, trade news, and pass on again.",
 image: "assets/locations/hearthmere.webp"
@@ -78,6 +86,7 @@ image: "assets/locations/hearthmere.webp"
     id: "vale-hallow",
     name: "Vale Hallow",
     type: "town",
+    chapter: 14,
     ref: "300238", // placeholder
     description: "A small valley settlement now reduced to a perfect ring of ruin, its cottages burned to blackened stumps and the ground within scorched smooth and glassy. Half-burned trees mark the boundary where the fire stopped as if cut by an unseen hand. The air is cold and still, carrying the faint, lingering tang of smoke from a fire that burned far hotter than any natural blaze.",
 image: "assets/locations/vale-hallow.webp"
@@ -86,6 +95,7 @@ image: "assets/locations/vale-hallow.webp"
     id: "dextyns-rescue",
     name: "Dextyn's Rescue",
     type: "town",
+    chapter: 14,
     ref: "321231", // placeholder
     description: "Dextyn’s form loomed before him—a god of ruin, pain made manifest.",
 image: "assets/locations/dextyns-rescue.webp"
@@ -94,6 +104,7 @@ image: "assets/locations/dextyns-rescue.webp"
     id: "greyharbour-rest",
     name: "Greyharbour Rest",
     type: "town",
+    chapter: 17,
     ref: "361211", // placeholder
     description: "A working town turned wary, the last solid “normal” Bram clings to for a while — kindness, faces, a few warm memories… and then the road out again. Beyond it, the southern way thins into older tracks and quieter places.",
 image: "assets/locations/greyharbour-rest.webp"
@@ -102,6 +113,7 @@ image: "assets/locations/greyharbour-rest.webp"
     id: "horse-trader",
     name: "Horse Trader",
     type: "town",
+    chapter: 18,
    ref: "373174", // placeholder
     description: "Bram laid a hand against the horse’s warm neck. “Veyrun,” he said softly—the name rising unbidden to his tongue.",
 image: "assets/locations/veyrun.webp"
@@ -110,6 +122,7 @@ image: "assets/locations/veyrun.webp"
     id: "ash-hollow",
     name: "Ash Hollow (Old Ruin / “nothing left but stone and stories”)",
     type: "town",
+    chapter: 19,
     ref: "331200", // placeholder
     description: "A name that still carries weight, even after the place itself is gone. They say it burned out years ago — and that when the wind turns, the ground remembers.",
 image: "assets/locations/ash-hollow.webp"
@@ -118,6 +131,7 @@ image: "assets/locations/ash-hollow.webp"
     id: "estmere",
     name: "Estmere",
     type: "town",
+    chapter: 19,
     ref: "428140", // placeholder
     description: "A practical stop on the road — a place to buy what a journey demands: boots that don’t fall apart, a heavier coat, a cloak that sheds rain instead of drinking it in. Not glamour. Just survival.",
 image: "assets/locations/estmere.webp"
@@ -126,6 +140,7 @@ image: "assets/locations/estmere.webp"
     id: "caravan",
     name: "Caravan",
     type: "town",
+    chapter: 22,
     ref: "432182", // placeholder
     description: "That night, the road gave him company he hadn’t expected.",
 image: "assets/locations/caravan.webp"
@@ -134,6 +149,7 @@ image: "assets/locations/caravan.webp"
     id: "barrow-hill",
     name: "Barrow Hill",
     type: "town",
+    chapter: 23,
    ref: "446205", // placeholder
     description: "A ruined rise on the ash plains, where fractured stone and wind-blown soot mark the bones of a town that did not survive its own history. Time feels thinner here, as if memory presses too close to the surface.",
 image: "assets/locations/barrow-hill.webp"
@@ -142,6 +158,7 @@ image: "assets/locations/barrow-hill.webp"
     id: "fallen-archive",
     name: "The Scriptorium of Velis",
     type: "Library",
+    chapter: 26,
     ref: "456282", // placeholder
     description: "A collapsed mage library buried along the ash plains, its fractured halls holding the silence of unfinished thought. Knowledge lingers in its ruins, but not safely.",
 image: "assets/locations/the-fallen-archive.webp" 
@@ -173,6 +190,7 @@ image: "assets/locations/the-capital.webp"
     id: "battle",
     name: "Battle",
     type: "city",
+    chapter: 29,
     ref: "466290", // placeholder
     description: "The Hollow loomed above Brey, ember-claws stretching down. Bram’s throat locked. He could do nothing—",
 image: "assets/locations/hollow.webp"
@@ -259,13 +277,25 @@ function renderPinsForChapter(chapter, imgW, imgH, markerLayer) {
       latlng = gridToLatLng(loc.grid[0], loc.grid[1], imgW, imgH);
     }
 
-    const marker = L.marker(latlng).addTo(markerLayer);
+  const marker = L.marker(latlng, {
+  icon: L.divIcon({
+    className: "chapter-marker",
+   html: `
+  <div class="scroll-marker" style="--rot:${(Math.random()*6 - 3)}deg;">
+    <img src="assets/markers/chapter-scroll.webp" />
+    <span>${loc.chapter ?? ""}</span>
+  </div>
+`,
+    iconSize: [95, 75],
+iconAnchor: [47, 48]
+  })
+}).addTo(markerLayer);
 
 marker.on("mouseover", function () {
   const el = this.getElement();
   if (el) {
-    el.style.filter = "drop-shadow(0 0 6px gold)";
-    el.style.transition = "filter 0.15s ease";
+   el.style.filter = "drop-shadow(0 0 6px gold)";
+el.style.transition = "filter 0.18s ease, transform 0.18s ease";
     el.style.zIndex = "1000";
   }
 });
