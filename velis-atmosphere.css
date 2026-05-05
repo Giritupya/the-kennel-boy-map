@@ -700,8 +700,12 @@ filter: brightness(0.75) contrast(1.05);
 /* Shelf hotspot */
 .velis-shelf-view .velis-shelf-canvas .velis-shelf-hotspot {
   position: absolute;
-  transform: translate(-50%, -50%);
   cursor: pointer;
+}
+
+.velis-shelf-hotspot {
+  width: 90px;   /* base size */
+  height: 220px; /* spine height */
 }
 
 .velis-shelf-hotspot span {
@@ -891,60 +895,92 @@ filter: brightness(0.75) contrast(1.05);
 .velis-shelf-hotspot {
   position: absolute;
   cursor: pointer;
+  background: rgba(255, 0, 0, 0.15);
+  outline: 2px solid red;
 }
 
 /* HOTSPOT POSITIONS — tweak these */
-/*Left Manuscript*/
+/*Prophecy Scroll*/
 .hotspot-1 {
-  left: 20%;
-  top: 58%;
+  left: 33%;
+  top: 53.5%;
+   width: 145px;
+  height: 38px;
+  transform: translate(-50%, -50%) rotate(-5deg);
 }
 /*Ledger*/
 .hotspot-2 {
-  left: 50%;
-  top: 53%;
+  left: 55%;
+  top: 59%;
+   width: 315px;
+  height: 35px;
+  transform: translate(-50%, -50%) rotate(8deg);
 }
-/*Map*/
+/*Map Scroll*/
 .hotspot-3 {
   position: absolute;
-  left: 65%;
-  top: 85%;
+  left: 72.5%;
+  top: 77.5%;
+   width: 55px;
+  height: 25px;
+  transform: translate(-50%, -50%) rotate(5deg);
 }
 /*Middle Scroll*/
 .hotspot-4 {
   position: absolute;
-  left: 50%;
-  top: 80%;
+  left: 52%;
+  top: 77%;
+   width: 200px;
+  height: 25px;
+  transform: translate(-50%, -50%) rotate(-7deg);
 }
 /*Bestiary*/
 .hotspot-5 {
-  left: 23.5%;
-  top: 34%;
+  left: 16%;
+  top: 36%;
+   width: 75px;
+  height: 350px;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 /*Watcher Notes*/
 .hotspot-6 {
-  left: 28%;
-  top: 38%;
+  left: 23%;
+  top: 36%;
+   width: 75px;
+  height: 330px;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 /*Flame Record*/
 .hotspot-7 {
-  left: 50%;
+  left: 55%;
   top: 65%;
+    width: 315px;
+  height: 35px;
+  transform: translate(-50%, -50%) rotate(8deg);
 }
 /*Velis Codex*/
 .hotspot-8 {
-  left: 50%;
-  top: 60%;
+  left: 30%;
+  top: 34%;
+   width: 75px;
+  height: 295px;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 /*Sealed Scroll*/
 .hotspot-9 {
-  left: 41%;
-  top: 75.5%;
+  left: 47%;
+  top: 72.5%;
+   width: 150px;
+  height: 10px;
+  transform: translate(-50%, -50%) rotate(3deg);
 }
 /*The Broken Lands*/
 .hotspot-10 {
-  left: 50%;
-  top: 70%;
+  left: 54%;
+  top: 69%;
+ width: 315px;
+  height: 35px;
+  transform: translate(-50%, -50%) rotate(8deg);
 }
 
 
@@ -1123,7 +1159,7 @@ filter: brightness(0.75) contrast(1.05);
 
   /* The Broken Lands */
   .hotspot-10 {
-    left: 50%;
+    left: 53%;
     top: 65%;
   }
 
@@ -1319,5 +1355,36 @@ filter: brightness(0.75) contrast(1.05);
     right: 8px;
     font-size: 18px;
     padding: 4px 7px;
-  }
+  } 
+}
+
+
+/* =========================
+   Temp visibility fix for hotspots
+   ========================= */
+.velis-shelf-hotspot span {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.1em;   /* key line */
+  text-align: center;
+}
+.velis-shelf-hotspot {
+  font-size: 100px; /* acts like a scaling base */
+}
+.velis-shelf-hotspot {
+  background: rgba(255, 0, 0, 0.15);
+  outline: 2px solid red;
+}
+.velis-shelf-hotspot {
+  background: transparent;
+  outline: none;
+}
+
+.velis-shelf-hotspot span {
+  display: none;
 }
