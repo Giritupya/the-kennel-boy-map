@@ -867,7 +867,7 @@ background: transparent;
   position: absolute;
 
   /* Change these two numbers to move the title */
-  left: 35%;
+  left: 37%;
   top: 14%;
 
   transform: translate(-50%, -50%);
@@ -895,7 +895,7 @@ background: transparent;
 
   transform: translate(-50%, -50%);
   width: 34%;
-  max-width: 420px;
+  max-width: 400px;
 
   color: #241307;
 font-weight: 500;
@@ -976,8 +976,8 @@ body.kennel-boy-page {
 .author-story {
   position: fixed;
   left: 2%;
-  top: 5%;
-  width: 400px;
+  top: 8%;
+  width: 375px;
   z-index: 5;
 }
 
@@ -991,5 +991,21 @@ body.about-page .nav {
   left: 69%;
   transform: translateX(-50%) rotate(-0.8deg);
   z-index: 20;
+}
+
+body.campfire-page .nav {
+    position: absolute;
+    left: 72%;
+    transform: translateX(-50%);
+    width: max-content;
+    white-space: nowrap;
+}
+
+body.kennel-boy-page .nav {
+    position: absolute;
+    left: 72%;
+    transform: translateX(-50%);
+    width: max-content;
+    white-space: nowrap;
 }
 
