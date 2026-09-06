@@ -718,22 +718,12 @@ filter: brightness(0.75) contrast(1.05);
   align-items: flex-end;
   padding: 0;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  position: relative;
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(11, 15, 20, 0.95) 0%,
-      rgba(11, 15, 20, 0.55) 40%,
-      rgba(11, 15, 20, 0.08) 75%
-    ),
-    url("assets/tales-from-the-campfire/campfire-master.webp");
-
-  background-size: cover;
-  background-position: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
-
 .campfire-hero-overlay {
   width: 100%;
   padding: 32px;
@@ -758,17 +748,17 @@ filter: brightness(0.75) contrast(1.05);
 }
 
 .campfire-hotspot {
-  position: absolute;
+  position: fixed;
   display: block;
 border: none;
 background: transparent;  z-index: 10;
 }
 
 .frozen-north-hotspot {
-  left: 90.3%;
-  top: 23.5%;
+  left: 89.9%;
+  top: 18%;
   width: 1%;
-  height: 28%;
+  height: 35%;
   transform: rotate(30deg);
   transform-origin: center;
 }
@@ -861,3 +851,145 @@ background: transparent;  z-index: 10;
   color: #ffffff;
   border-color: #526f82;
 }
+
+/* The Kennel Boy world page */
+
+.kennel-boy-world {
+  position: relative;
+  min-height: 720px;
+  border-radius: 18px;
+  overflow: visible;
+
+background: transparent;
+}
+
+.kennel-boy-title {
+  position: absolute;
+
+  /* Change these two numbers to move the title */
+  left: 35%;
+  top: 14%;
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #3b2413;
+
+  z-index: 2;
+}
+
+.kennel-boy-title h2 {
+  margin: 4px 0;
+  font-size: 2.5rem;
+}
+
+.kennel-boy-title p {
+  margin: 4px 0;
+}
+
+.kennel-boy-intro {
+  position: fixed;
+
+  /* Move the whole description with these */
+  left: 70%;
+  top: 60%;
+
+  transform: translate(-50%, -50%);
+  width: 34%;
+  max-width: 420px;
+
+  color: #241307;
+font-weight: 500;
+text-shadow:
+  0 0 3px rgba(245, 220, 175, 0.95),
+  0 0 7px rgba(245, 220, 175, 0.75);
+  text-align: left;
+  line-height: 1.55;
+
+  z-index: 2;
+}
+
+.kennel-boy-intro p {
+  margin: 0 0 14px;
+}
+
+.kennel-map-hotspot {
+  position: fixed;
+
+  /* Move the hotspot */
+  left: 50%;
+  top: 46%;
+
+  /* Change these to fit the island */
+  width: 25px;
+  height: 25px;
+
+  transform: translate(-50%, -50%);
+
+  /* Temporary red marker — we'll remove this later */
+border: none;
+background: transparent;
+
+  z-index: 10;
+  cursor: pointer;
+}
+
+body.kennel-boy-page {
+  min-height: 100vh;
+  background: #241f1a;
+
+  background:
+}
+
+/* About John Rainbird */
+
+body.about-page {
+  min-height: 100vh;
+
+  background:
+    url("assets/author-page/author-mess.webp")
+    center center / cover
+    fixed
+    no-repeat;
+}
+
+body.campfire-page {
+  min-height: 100vh;
+
+  background:
+    url("assets/tales-from-the-campfire/campfire-master.webp")
+    center center / cover
+    fixed
+    no-repeat;
+}
+
+body.kennel-boy-page {
+  min-height: 100vh;
+
+  background-color: #241f1a;
+  background-image: url("assets/the-kennel-boy/world-map.webp");
+  background-position: center center;
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.author-story {
+  position: fixed;
+  left: 2%;
+  top: 5%;
+  width: 400px;
+  z-index: 5;
+}
+
+body.about-page .nav a {
+  color: #111;
+}
+
+body.about-page .nav {
+  position: fixed;
+  top: 83px;
+  left: 69%;
+  transform: translateX(-50%) rotate(-0.8deg);
+  z-index: 20;
+}
+
