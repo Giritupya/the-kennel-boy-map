@@ -987,7 +987,7 @@ body.about-page .nav a {
 
 body.about-page .nav {
   position: absolute;
-  top: 83px;
+  top: 76px;
   left: 69%;
   transform: translateX(-50%) rotate(-0.8deg);
   z-index: 20;
