@@ -1220,3 +1220,109 @@ body.john-rainbird-page .nav {
 
 }
 
+/* =========================
+   The Kennel Boy - Mobile Layout
+   ========================= */
+
+@media (max-width: 640px) {
+
+  body.kennel-boy-page .header {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  body.kennel-boy-page .nav {
+    position: static;
+    transform: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    white-space: normal;
+    box-sizing: border-box;
+  }
+
+  body.kennel-boy-page .nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 12px 8px;
+    border: 1px solid rgba(125, 211, 252, 0.25);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    min-height: 48px;
+    box-sizing: border-box;
+  }
+
+}
+
+/* =========================
+   The Kennel Boy - Mobile Content
+   ========================= */
+
+@media (max-width: 640px) {
+
+  body.kennel-boy-page {
+    background-color: #241f1a;
+    background-image: none;
+  }
+
+  body.kennel-boy-page .kennel-boy-world {
+    position: relative;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 0 40px;
+    background: transparent;
+  }
+
+  body.kennel-boy-page .kennel-boy-title {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    color: #d6b58b;
+  }
+
+  body.kennel-boy-page .kennel-boy-title h2 {
+    font-size: 2.2rem;
+    color: #e7c89d;
+  }
+
+  body.kennel-boy-page .kennel-boy-intro {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 560px;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #ead9c4;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-shadow: none;
+    text-align: left;
+  }
+
+  body.kennel-boy-page .kennel-map-hotspot {
+    position: relative;
+    display: block;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.5 / 1;
+    background: url("assets/the-kennel-boy/world-map.webp")
+                center / contain no-repeat;
+    border: none;
+    cursor: pointer;
+  }
+
+}
+
+
