@@ -1325,4 +1325,84 @@ body.john-rainbird-page .nav {
 
 }
 
+/* =========================
+   Tales from the Campfire
+   Mobile Layout
+   ========================= */
+
+@media (max-width: 640px) {
+
+  body.campfire-page {
+    background-image:
+      url("assets/tales-from-the-campfire/campfire-mobile.webp");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: #10121a;
+  }
+
+  body.campfire-page .header {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  body.campfire-page .nav {
+    position: static;
+    transform: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    white-space: normal;
+  }
+
+  body.campfire-page .nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 12px 8px;
+    min-height: 48px;
+    box-sizing: border-box;
+    border: 1px solid rgba(125, 211, 252, 0.25);
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  body.campfire-page .campfire-hero {
+    min-height: 100vh;
+    aspect-ratio: auto;
+  }
+
+  body.campfire-page .footer {
+    position: relative;
+    margin-top: 20px;
+  }
+
+}
+
+/* Campfire mobile - remove excess space below artwork */
+
+@media (max-width: 640px) {
+
+  body.campfire-page .campfire-hero {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    background: transparent;
+  }
+
+  body.campfire-page .author-home {
+    padding-bottom: 0;
+  }
+
+  body.campfire-page .footer {
+    margin-top: 0;
+  }
+
+}
+
 
