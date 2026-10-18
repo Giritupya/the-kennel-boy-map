@@ -1183,3 +1183,40 @@ body.john-rainbird-page .nav {
   }
 }
 
+/* =========================
+   Homepage Mobile Navigation
+   ========================= */
+
+@media (max-width: 640px) {
+
+  body:not(.map-body) .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  body:not(.map-body) .header h1 {
+    margin-bottom: 8px;
+  }
+
+  body:not(.map-body) .nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  body:not(.map-body) .nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 12px 8px;
+    text-align: center;
+    border: 1px solid rgba(125, 211, 252, 0.2);
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+}
+
