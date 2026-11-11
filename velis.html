@@ -32,17 +32,13 @@
 
       <!-- Hotspots -->
       
-  <div
-  class="velis-podium velis-hotspot velis-hotspot-podium is-active"
-  data-title="The Great Book of Velis"
-  data-text="A vast iron-bound volume rests upon the central podium. This will become the main reading station for Book One lore."
->
-  <div class="velis-book-object"></div>
-
-  <div class="velis-podium-top"></div>
-  <div class="velis-podium-body"></div>
-  <div class="velis-podium-base"></div>
-</div>
+  <button type="button"
+    class="velis-hotspot velis-hotspot-podium"
+    aria-label="Open the Great Book of Velis"
+    title="Open the Great Book of Velis"
+    data-title="The Great Book of Velis"
+    data-text="Open the Great Book of Velis">
+  </button>
 
       <button
         class="velis-hotspot velis-hotspot-left"
@@ -66,25 +62,6 @@
       </div>
     </div>
 
-    <aside class="velis-panel">
-      <div class="velis-panel-inner">
-        <p class="velis-panel-kicker">Archive Focus</p>
-        <h2 id="velisPanelTitle">The Great Book of Velis</h2>
-        <p id="velisPanelText">
-          A vast iron-bound volume rests upon the central podium. This will become the main reading station for Book One lore.
-        </p>
-
-        <div class="velis-panel-actions">
-          <button id="velisOpenButton" class="velis-action-button" type="button">
-            Open Record
-          </button>
-        </div>
-
-        <div class="velis-panel-note">
-          For now this button is only a placeholder. Once the room works, we’ll make it open the real book UI.
-        </div>
-      </div>
-    </aside>
 
   </main>
   <div id="velisBookOverlay" class="velis-book-overlay hidden">
@@ -299,10 +276,6 @@
 <script src="velis-right-shelf-data.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const hotspots = document.querySelectorAll('.velis-hotspot');
-  const panelTitle = document.getElementById('velisPanelTitle');
-  const panelText = document.getElementById('velisPanelText');
-  const openButton = document.getElementById('velisOpenButton');
 
    const bookOverlay = document.getElementById('velisBookOverlay');
   const bookPages = document.querySelector('.velis-book-pages');
@@ -330,22 +303,10 @@ let activeShelfData = VELIS_LEFT_SHELF;
 
   
 
-  hotspots.forEach(hotspot => {
-    hotspot.addEventListener('click', () => {
-      hotspots.forEach(h => h.classList.remove('is-active'));
-      hotspot.classList.add('is-active');
-
-      panelTitle.textContent = hotspot.dataset.title;
-      panelText.textContent = hotspot.dataset.text;
-    });
-  });
-
-  openButton.addEventListener('click', () => {
-    room.classList.add('velis-zoom');
-
-    setTimeout(() => {
-      bookOverlay.classList.remove('hidden');
-    }, 900);
+  // The lectern is part of the artwork; its transparent hotspot opens the book.
+  const podiumHotspot = document.querySelector('.velis-hotspot-podium');
+  podiumHotspot.addEventListener('click', () => {
+    bookOverlay.classList.remove('hidden');
   });
 
   closeBook.addEventListener('click', () => {
